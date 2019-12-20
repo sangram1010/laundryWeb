@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2019-12-20UTC03:54:040">
+        <header>
+            <authorName>Sangram Bhavar</authorName>
+            <authorEmail>sangram.bhavar@hof-university.de</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="backend_layout.example">
+                <source>Example</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.normal">
+                <source>Normal</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

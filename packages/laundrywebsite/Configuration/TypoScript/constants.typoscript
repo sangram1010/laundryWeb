@@ -1,0 +1,60 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/constants.typoscript">
+
+
+############
+### PAGE ###
+############
+page {
+    logo {
+        file = EXT:laundrywebsite/Resources/Public/Images/logo.svg
+        fileInverted = EXT:laundrywebsite/Resources/Public/Images/logo-inverted.svg
+        height = 52
+        width = 192
+        alt = laundrywebsite
+        linktitle = laundrywebsite
+    }
+    favicon {
+        file = EXT:laundrywebsite/Resources/Public/Icons/favicon.ico
+    }
+    fluidtemplate {
+        layoutRootPath = EXT:laundrywebsite/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:laundrywebsite/Resources/Private/Partials/Page/
+        templateRootPath = EXT:laundrywebsite/Resources/Private/Templates/Page/
+    }
+}
+
+
+##################
+### EXTENSIONS ###
+##################
+plugin.bootstrap_package {
+    view {
+        layoutRootPath = EXT:laundrywebsite/Resources/Private/Layouts/
+        partialRootPath = EXT:laundrywebsite/Resources/Private/Partials/
+        templateRootPath = EXT:laundrywebsite/Resources/Private/Templates/
+    }
+}
+
+
+########################
+### CONTENT ELEMENTS ###
+########################
+plugin.bootstrap_package_contentelements {
+    view {
+        layoutRootPath = EXT:laundrywebsite/Resources/Private/Layouts/ContentElements/
+        partialRootPath = EXT:laundrywebsite/Resources/Private/Partials/ContentElements/
+        templateRootPath = EXT:laundrywebsite/Resources/Private/Templates/ContentElements/
+    }
+}
+
+
+################################
+### BOOTSTRAP SCSS CONSTANTS ###
+################################
+plugin.bootstrap_package.settings.scss {
+    primary = #eb3e4a
+    secondary = #013859
+}

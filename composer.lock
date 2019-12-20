@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eeed231c26db96dc72f3909436ad8853",
+    "content-hash": "a00dd7a769f4da4977977ba0a48f9d8e",
     "packages": [
         {
             "name": "algo26-matthias/idna-convert",
@@ -56,6 +56,92 @@
             "time": "2016-06-19T18:08:43+00:00"
         },
         {
+            "name": "bk2k/bootstrap-package",
+            "version": "10.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/benjaminkott/bootstrap_package.git",
+                "reference": "082f145832f0b33f7a2839b9bc5c90ef4ce1d70e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/benjaminkott/bootstrap_package/zipball/082f145832f0b33f7a2839b9bc5c90ef4ce1d70e",
+                "reference": "082f145832f0b33f7a2839b9bc5c90ef4ce1d70e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-libxml": "*",
+                "ext-simplexml": "*",
+                "php": ">=7.0.0",
+                "scssphp/scssphp": "^1.0.6",
+                "typo3/cms-backend": "^8.7.0 || ^9.0",
+                "typo3/cms-core": "^8.7.0 || ^9.0",
+                "typo3/cms-extbase": "^8.7.0 || ^9.0",
+                "typo3/cms-extensionmanager": "^8.7.0 || ^9.0",
+                "typo3/cms-fluid": "^8.7.0 || ^9.0",
+                "typo3/cms-frontend": "^8.7.0 || ^9.0",
+                "typo3/cms-install": "^8.7.0 || ^9.0",
+                "typo3/cms-rte-ckeditor": "^8.7.0 || ^9.0"
+            },
+            "conflict": {
+                "scssphp/scssphp": "1.0.4 || 1.0.5"
+            },
+            "require-dev": {
+                "bk2k/extension-helper": "^1.0",
+                "friendsofphp/php-cs-fixer": "^2.3.1",
+                "overtrue/phplint": "^1.1",
+                "typo3/cms-felogin": "^8.7.0 || ^9.0",
+                "typo3/cms-form": "^8.7.0 || ^9.0",
+                "typo3/cms-indexed-search": "^8.7.0 || ^9.0",
+                "typo3/cms-tstemplate": "^8.7.0 || ^9.0",
+                "typo3/testing-framework": "^1.2 || ^4.9"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms",
+                    "web-dir": ".build/web"
+                },
+                "branch-alias": {
+                    "dev-BP_10-0": "10.0.x-dev"
+                },
+                "patches_applied": {
+                    "PR #585": "https://github.com/ohader/bootstrap_package/commit/0eada54383f4a055a0aaae5f986de2e352acf063.patch"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BK2K\\BootstrapPackage\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Kott",
+                    "email": "info@bk2k.info",
+                    "homepage": "http://www.bk2k.info/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Bootstrap Package delivers a full configured frontend theme for TYPO3, based on the Bootstrap CSS Framework.",
+            "homepage": "https://github.com/benjaminkott/bootstrap_package",
+            "keywords": [
+                "TYPO3 CMS",
+                "bootstrap",
+                "frontend",
+                "introduction",
+                "responsive",
+                "sitepackage",
+                "theme",
+                "web"
+            ],
+            "time": "2019-12-13T19:13:57+00:00"
+        },
+        {
             "name": "cogpowered/finediff",
             "version": "0.3.1",
             "source": {
@@ -105,6 +191,50 @@
                 "text"
             ],
             "time": "2014-05-19T10:25:02+00:00"
+        },
+        {
+            "name": "cweagans/composer-patches",
+            "version": "1.6.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cweagans/composer-patches.git",
+                "reference": "2e6f72a2ad8d59cd7e2b729f218bf42adb14f590"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/2e6f72a2ad8d59cd7e2b729f218bf42adb14f590",
+                "reference": "2e6f72a2ad8d59cd7e2b729f218bf42adb14f590",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "composer/composer": "~1.0",
+                "phpunit/phpunit": "~4.6"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "cweagans\\Composer\\Patches"
+            },
+            "autoload": {
+                "psr-4": {
+                    "cweagans\\Composer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Cameron Eagans",
+                    "email": "me@cweagans.net"
+                }
+            ],
+            "description": "Provides a way to patch Composer packages.",
+            "time": "2019-08-29T20:11:49+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -1309,6 +1439,94 @@
             ],
             "description": "A polyfill for getallheaders.",
             "time": "2019-03-08T08:55:37+00:00"
+        },
+        {
+            "name": "sangram-bhavar/laundrywebsite",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "packages/laundrywebsite",
+                "reference": "7d7367c6690b6b052b38522485eaa373a34847d9"
+            },
+            "require": {
+                "bk2k/bootstrap-package": "^10.0",
+                "typo3/cms-core": "^8.7 || ^9.5",
+                "typo3/cms-rte-ckeditor": "^8.7 || ^9.5"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "psr-4": {
+                    "SangramBhavar\\Laundrywebsite\\": "Classes/"
+                }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "homepage": "https://hof-university.de",
+            "keywords": [
+                "TYPO3 CMS"
+            ]
+        },
+        {
+            "name": "scssphp/scssphp",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/scssphp/scssphp.git",
+                "reference": "5b3c9d704950d8f9637f5110c36c281ec47dc13c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/scssphp/scssphp/zipball/5b3c9d704950d8f9637f5110c36c281ec47dc13c",
+                "reference": "5b3c9d704950d8f9637f5110c36c281ec47dc13c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-json": "*",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7 || ^6.5 || ^7.5 || ^8.3",
+                "squizlabs/php_codesniffer": "~2.5",
+                "twbs/bootstrap": "~4.3",
+                "zurb/foundation": "~6.5"
+            },
+            "bin": [
+                "bin/pscss"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ScssPhp\\ScssPhp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthon Pang",
+                    "email": "apang@softwaredevelopment.ca",
+                    "homepage": "https://github.com/robocoder"
+                },
+                {
+                    "name": "Cédric Morin",
+                    "email": "cedric@yterium.com",
+                    "homepage": "https://github.com/Cerdic"
+                }
+            ],
+            "description": "scssphp is a compiler for SCSS written in PHP.",
+            "homepage": "http://scssphp.github.io/scssphp/",
+            "keywords": [
+                "css",
+                "less",
+                "sass",
+                "scss",
+                "stylesheet"
+            ],
+            "time": "2019-12-12T05:00:52+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3744,6 +3962,58 @@
                 }
             ],
             "description": "The reports module groups several system reports.",
+            "homepage": "https://typo3.org",
+            "time": "2019-12-17T14:17:37+00:00"
+        },
+        {
+            "name": "typo3/cms-rte-ckeditor",
+            "version": "v9.5.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3-CMS/rte_ckeditor.git",
+                "reference": "5b91bac116ba741f570d99b16e983731eb7c398a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3-CMS/rte_ckeditor/zipball/5b91bac116ba741f570d99b16e983731eb7c398a",
+                "reference": "5b91bac116ba741f570d99b16e983731eb7c398a",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": "9.5.13"
+            },
+            "conflict": {
+                "typo3/cms": "*"
+            },
+            "suggest": {
+                "typo3/cms-setup": "*"
+            },
+            "type": "typo3-cms-framework",
+            "extra": {
+                "typo3/cms": {
+                    "Package": {
+                        "partOfFactoryDefault": true
+                    },
+                    "extension-key": "rte_ckeditor"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TYPO3\\CMS\\RteCKEditor\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "TYPO3 Core Team",
+                    "email": "typo3cms@typo3.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Integration of CKEditor as Rich Text Editor.",
             "homepage": "https://typo3.org",
             "time": "2019-12-17T14:17:37+00:00"
         },
