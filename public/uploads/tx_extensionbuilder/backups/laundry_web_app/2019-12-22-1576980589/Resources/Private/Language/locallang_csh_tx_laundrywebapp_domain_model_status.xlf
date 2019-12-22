@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:laundry_web_app/Resources/Private/Language/locallang_csh" date="2019-12-22T01:54:04Z" product-name="laundry_web_app">
+		<header/>
+		<body>
+			<trans-unit id="statusid.description" resname="statusid.description">
+				<source>statusid</source>
+			</trans-unit>
+			<trans-unit id="status.description" resname="status.description">
+				<source>status</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

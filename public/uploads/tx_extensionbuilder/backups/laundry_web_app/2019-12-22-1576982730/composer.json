@@ -1,0 +1,40 @@
+{
+    "name": "launderywebcleaners/laundry-web-app",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "authors": [
+        {
+            "name": "Sangram Bhavar",
+            "role": "Developer"
+        },
+        {
+            "name": "Rajveer Sahney",
+            "role": "Developer"
+        },
+        {
+            "name": "Danish Umair Ahmad",
+            "role": "Developer"
+        },
+        {
+            "name": "Sukanta Maity",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaunderyWebCleaners\\LaundryWebApp\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaunderyWebCleaners\\LaundryWebApp\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "launderywebcleaners/laundry-web-app": "self.version",
+        "typo3-ter/laundry-web-app": "self.version"
+    }
+}

@@ -98,6 +98,12 @@ return [
         'laundrywebsite' => [
             'packagePath' => 'typo3conf/ext/laundrywebsite/',
         ],
+        'extension_builder' => [
+            'packagePath' => 'typo3conf/ext/extension_builder/',
+        ],
+        'laundry_web_app' => [
+            'packagePath' => 'typo3conf/ext/laundry_web_app/',
+        ],
     ],
     'version' => 5,
 ];

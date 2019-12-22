@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:laundry_web_app/Resources/Private/Language/locallang_db" date="2019-12-22T01:49:33Z" product-name="laundry_web_app">
+		<header/>
+		<body>
+			<trans-unit id="tx_laundrywebapp_domain_model_login" resname="tx_laundrywebapp_domain_model_login">
+				<source>Login</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_login.email" resname="tx_laundrywebapp_domain_model_login.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_login.password" resname="tx_laundrywebapp_domain_model_login.password">
+				<source>Password</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_login.type" resname="tx_laundrywebapp_domain_model_login.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_deliveryperson" resname="tx_laundrywebapp_domain_model_deliveryperson">
+				<source>Delivery Person</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_deliveryperson.delivery_pid" resname="tx_laundrywebapp_domain_model_deliveryperson.delivery_pid">
+				<source>Delivery Pid</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_deliveryperson.name" resname="tx_laundrywebapp_domain_model_deliveryperson.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_deliveryperson.contactno" resname="tx_laundrywebapp_domain_model_deliveryperson.contactno">
+				<source>Contactno</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_customer" resname="tx_laundrywebapp_domain_model_customer">
+				<source>Customer</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_customer.customerid" resname="tx_laundrywebapp_domain_model_customer.customerid">
+				<source>Customerid</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_customer.title" resname="tx_laundrywebapp_domain_model_customer.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_customer.firstname" resname="tx_laundrywebapp_domain_model_customer.firstname">
+				<source>Firstname</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_customer.surname" resname="tx_laundrywebapp_domain_model_customer.surname">
+				<source>Surname</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_customer.addressid" resname="tx_laundrywebapp_domain_model_customer.addressid">
+				<source>Addressid</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_order" resname="tx_laundrywebapp_domain_model_order">
+				<source>Order</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_order.orderid" resname="tx_laundrywebapp_domain_model_order.orderid">
+				<source>Orderid</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_order.customerid" resname="tx_laundrywebapp_domain_model_order.customerid">
+				<source>Customerid</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_order.totalprice" resname="tx_laundrywebapp_domain_model_order.totalprice">
+				<source>Totalprice</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_order.datecreated" resname="tx_laundrywebapp_domain_model_order.datecreated">
+				<source>Datecreated</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_order.delivery_pid" resname="tx_laundrywebapp_domain_model_order.delivery_pid">
+				<source>Delivery Pid</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_order.statusid" resname="tx_laundrywebapp_domain_model_order.statusid">
+				<source>Statusid</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_order.ordetitems" resname="tx_laundrywebapp_domain_model_order.ordetitems">
+				<source>Ordetitems</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_order.customer" resname="tx_laundrywebapp_domain_model_order.customer">
+				<source>Customer</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_order.status" resname="tx_laundrywebapp_domain_model_order.status">
+				<source>Status</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_order.delivery_person" resname="tx_laundrywebapp_domain_model_order.delivery_person">
+				<source>Delivery Person</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_orderitem" resname="tx_laundrywebapp_domain_model_orderitem">
+				<source>Orderitem</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_orderitem.itemid" resname="tx_laundrywebapp_domain_model_orderitem.itemid">
+				<source>Itemid</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_orderitem.orderid" resname="tx_laundrywebapp_domain_model_orderitem.orderid">
+				<source>Orderid</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_orderitem.productid" resname="tx_laundrywebapp_domain_model_orderitem.productid">
+				<source>Productid</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_orderitem.color" resname="tx_laundrywebapp_domain_model_orderitem.color">
+				<source>Color</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_orderitem.quantity" resname="tx_laundrywebapp_domain_model_orderitem.quantity">
+				<source>Quantity</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_address" resname="tx_laundrywebapp_domain_model_address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_address.addressid" resname="tx_laundrywebapp_domain_model_address.addressid">
+				<source>Addressid</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_address.houseno" resname="tx_laundrywebapp_domain_model_address.houseno">
+				<source>Houseno</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_address.street" resname="tx_laundrywebapp_domain_model_address.street">
+				<source>Street</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_address.pincode" resname="tx_laundrywebapp_domain_model_address.pincode">
+				<source>Pincode</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_address.state" resname="tx_laundrywebapp_domain_model_address.state">
+				<source>State</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_address.country" resname="tx_laundrywebapp_domain_model_address.country">
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_address.contactno" resname="tx_laundrywebapp_domain_model_address.contactno">
+				<source>Contactno</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_address.email" resname="tx_laundrywebapp_domain_model_address.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_status" resname="tx_laundrywebapp_domain_model_status">
+				<source>Status</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_product" resname="tx_laundrywebapp_domain_model_product">
+				<source>Product</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_product.productid" resname="tx_laundrywebapp_domain_model_product.productid">
+				<source>Productid</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_product.itemid" resname="tx_laundrywebapp_domain_model_product.itemid">
+				<source>Itemid</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_product.pricecolor" resname="tx_laundrywebapp_domain_model_product.pricecolor">
+				<source>Pricecolor</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_product.pricewhite" resname="tx_laundrywebapp_domain_model_product.pricewhite">
+				<source>Pricewhite</source>
+			</trans-unit>
+			<trans-unit id="tx_laundry_web_app_laundry.name" resname="tx_laundry_web_app_laundry.name">
+				<source>Laundry</source>
+			</trans-unit>
+			<trans-unit id="tx_laundry_web_app_laundry.description" resname="tx_laundry_web_app_laundry.description">
+				<source></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

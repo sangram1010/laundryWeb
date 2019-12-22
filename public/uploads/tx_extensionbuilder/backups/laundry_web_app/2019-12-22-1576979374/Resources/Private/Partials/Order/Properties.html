@@ -1,0 +1,52 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<table class="tx-laundry-web-app" >
+	<tr>
+		<td>
+			<f:translate key="tx_laundrywebapp_domain_model_order.orderid" />
+		</td>
+		<td>
+		{order.orderid}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_laundrywebapp_domain_model_order.customerid" />
+		</td>
+		<td>
+		{order.customerid}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_laundrywebapp_domain_model_order.totalprice" />
+		</td>
+		<td>
+		{order.totalprice}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_laundrywebapp_domain_model_order.datecreated" />
+		</td>
+		<td>
+		{order.datecreated -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_laundrywebapp_domain_model_order.delivery_pid" />
+		</td>
+		<td>
+		{order.deliveryPid}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_laundrywebapp_domain_model_order.statusid" />
+		</td>
+		<td>
+		{order.statusid}
+		</td>
+	</tr>
+</table>
+</html>

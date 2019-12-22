@@ -1,0 +1,69 @@
+{
+    "modules": [],
+    "properties": {
+        "backendModules": [],
+        "description": "",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 9.5.0-9.5.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "9.5.0-9.5.99",
+            "version": "1.0.0"
+        },
+        "extensionKey": "laundry_web_app",
+        "name": "LaundryWeb App",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "LaundryWeb",
+                "email": "sangram.bhavar@hof-university.de",
+                "name": "Sangram Bhavar",
+                "role": "Developer"
+            },
+            {
+                "company": "LaundryWeb",
+                "email": "rajveer.sahney@hof-university.de",
+                "name": "Rajveer Sahney",
+                "role": "Developer"
+            },
+            {
+                "company": "LaundryWeb",
+                "email": "danish.umair.ahmad@hof-university.de",
+                "name": "Danish Umair Ahmad",
+                "role": "Developer"
+            },
+            {
+                "company": "LaundryWeb",
+                "email": "sukanta.maity@hof-university.de",
+                "name": "Sukanta Maity",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "",
+                    "noncacheableActions": "",
+                    "switchableActions": ""
+                },
+                "description": "",
+                "key": "laundry",
+                "name": "Laundry"
+            }
+        ],
+        "vendorName": "LaunderyWebCleaners"
+    },
+    "wires": [],
+    "storagePath": "\/var\/www\/html\/packages\/",
+    "log": {
+        "last_modified": "2019-12-22 01:04",
+        "extension_builder_version": "9.10.2",
+        "be_user": " (1)"
+    }
+}

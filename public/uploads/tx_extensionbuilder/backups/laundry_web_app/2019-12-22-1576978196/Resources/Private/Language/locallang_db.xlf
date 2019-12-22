@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:laundry_web_app/Resources/Private/Language/locallang_db" date="2019-12-22T01:04:55Z" product-name="laundry_web_app">
+		<header/>
+		<body>
+			<trans-unit id="tx_laundry_web_app_laundry.name" resname="tx_laundry_web_app_laundry.name">
+				<source>Laundry</source>
+			</trans-unit>
+			<trans-unit id="tx_laundry_web_app_laundry.description" resname="tx_laundry_web_app_laundry.description">
+				<source></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

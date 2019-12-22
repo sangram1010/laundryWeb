@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<label for="orderid">
+	<f:translate key="tx_laundrywebapp_domain_model_order.orderid" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="orderid" /><br />
+<label for="customerid">
+	<f:translate key="tx_laundrywebapp_domain_model_order.customerid" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="customerid" /><br />
+<label for="totalprice">
+	<f:translate key="tx_laundrywebapp_domain_model_order.totalprice" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="totalprice" /><br />
+<label for="datecreated">
+	<f:translate key="tx_laundrywebapp_domain_model_order.datecreated" />
+</label><br />
+	<f:form.textfield property="datecreated" value="{order.datecreated->f:format.date()}" /><br />
+<label for="deliveryPid">
+	<f:translate key="tx_laundrywebapp_domain_model_order.delivery_pid" />
+</label><br />
+	<f:form.textfield property="deliveryPid" /><br />
+<label for="statusid">
+	<f:translate key="tx_laundrywebapp_domain_model_order.statusid" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="statusid" /><br />
+</html>

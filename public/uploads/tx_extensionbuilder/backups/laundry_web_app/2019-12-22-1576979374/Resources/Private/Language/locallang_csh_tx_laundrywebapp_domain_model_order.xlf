@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:laundry_web_app/Resources/Private/Language/locallang_csh" date="2019-12-22T01:29:54Z" product-name="laundry_web_app">
+		<header/>
+		<body>
+			<trans-unit id="orderid.description" resname="orderid.description">
+				<source>orderid</source>
+			</trans-unit>
+			<trans-unit id="customerid.description" resname="customerid.description">
+				<source>customerid</source>
+			</trans-unit>
+			<trans-unit id="totalprice.description" resname="totalprice.description">
+				<source>totalprice</source>
+			</trans-unit>
+			<trans-unit id="datecreated.description" resname="datecreated.description">
+				<source>datecreated</source>
+			</trans-unit>
+			<trans-unit id="delivery_pid.description" resname="delivery_pid.description">
+				<source>deliveryPid</source>
+			</trans-unit>
+			<trans-unit id="statusid.description" resname="statusid.description">
+				<source>statusid</source>
+			</trans-unit>
+			<trans-unit id="ordetitems.description" resname="ordetitems.description">
+				<source>ordetitems</source>
+			</trans-unit>
+			<trans-unit id="customer.description" resname="customer.description">
+				<source>customer</source>
+			</trans-unit>
+			<trans-unit id="status.description" resname="status.description">
+				<source>status</source>
+			</trans-unit>
+			<trans-unit id="delivery_person.description" resname="delivery_person.description">
+				<source>deliveryPerson</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

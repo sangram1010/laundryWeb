@@ -31,7 +31,8 @@
         "typo3/cms-tstemplate": "^9.5",
         "typo3/cms-viewpage": "^9.5",
         "cweagans/composer-patches": "^1.6",
-        "sangram-bhavar/laundrywebsite": "^1.0"
+        "sangram-bhavar/laundrywebsite": "^1.0",
+        "launderywebcleaners/laundry-web-app": "dev-master"
     },
     "repositories": {
         "local": {
@@ -41,5 +42,8 @@
     },
     "extra": {
         "patches-file": "composer.patches.json"
+    },
+    "require-dev": {
+        "friendsoftypo3/extension-builder": "dev-master"
     }
 }

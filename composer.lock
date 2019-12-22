@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a00dd7a769f4da4977977ba0a48f9d8e",
+    "content-hash": "01077826e904d598f5748bbed3e21ab6",
     "packages": [
         {
             "name": "algo26-matthias/idna-convert",
@@ -1049,6 +1049,51 @@
                 "typo3 console"
             ],
             "time": "2018-12-09T12:06:13+00:00"
+        },
+        {
+            "name": "launderywebcleaners/laundry-web-app",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "packages/laundry_web_app",
+                "reference": "f8f3fd7095df021e4eb0d840f4b5c824d69e75bf"
+            },
+            "require": {
+                "typo3/cms-core": "^9.5"
+            },
+            "replace": {
+                "launderywebcleaners/laundry-web-app": "self.version",
+                "typo3-ter/laundry-web-app": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "psr-4": {
+                    "LaunderyWebCleaners\\LaundryWebApp\\": "Classes"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "LaunderyWebCleaners\\LaundryWebApp\\Tests\\": "Tests"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Sangram Bhavar",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Rajveer Sahney",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Danish Umair Ahmad",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sukanta Maity",
+                    "role": "Developer"
+                }
+            ]
         },
         {
             "name": "nikic/php-parser",
@@ -4504,10 +4549,77 @@
             "time": "2019-12-02T06:33:10+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "friendsoftypo3/extension-builder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfTYPO3/extension_builder.git",
+                "reference": "d6b734fa13555a91bbf1e462c478a95c6f8ce0e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfTYPO3/extension_builder/zipball/d6b734fa13555a91bbf1e462c478a95c6f8ce0e0",
+                "reference": "d6b734fa13555a91bbf1e462c478a95c6f8ce0e0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "nikic/php-parser": "^4.0",
+                "typo3/cms-backend": "~9.5",
+                "typo3/cms-core": "~9.5"
+            },
+            "replace": {
+                "typo3-ter/extension-builder": "self.version"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2",
+                "nimut/testing-framework": "^4",
+                "sebastian/diff": "^3.0"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms",
+                    "web-dir": ".Build/Web"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "EBT\\ExtensionBuilder\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Nico de Haen",
+                    "role": "Developer"
+                },
+                {
+                    "name": "extension_builder Development Team",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tool to kickstart and maintain TYPO3 extensions",
+            "homepage": "https://github.com/FriendsOfTYPO3/extension_builder",
+            "keywords": [
+                "extension",
+                "extension_builder",
+                "typo3"
+            ],
+            "time": "2019-12-09T23:25:50+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "launderywebcleaners/laundry-web-app": 20,
+        "friendsoftypo3/extension-builder": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

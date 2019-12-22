@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:laundry_web_app/Resources/Private/Language/locallang_csh" date="2019-12-22T01:49:33Z" product-name="laundry_web_app">
+		<header/>
+		<body>
+			<trans-unit id="itemid.description" resname="itemid.description">
+				<source>itemid</source>
+			</trans-unit>
+			<trans-unit id="orderid.description" resname="orderid.description">
+				<source>orderid</source>
+			</trans-unit>
+			<trans-unit id="productid.description" resname="productid.description">
+				<source>productid</source>
+			</trans-unit>
+			<trans-unit id="color.description" resname="color.description">
+				<source>color</source>
+			</trans-unit>
+			<trans-unit id="quantity.description" resname="quantity.description">
+				<source>quantity</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
