@@ -1,0 +1,36 @@
+
+renderingOptions:
+  submitButtonLabel: Submit
+type: Form
+identifier: login
+label: login
+prototypeName: standard
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-1
+    label: Step
+    renderables:
+      -
+        defaultValue: ''
+        validators:
+          -
+            identifier: EmailAddress
+        type: Email
+        identifier: email-1
+        label: 'Email address'
+      -
+        defaultValue: ''
+        type: Password
+        identifier: password-1
+        label: Password
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: SummaryPage
+    identifier: summarypage-1
+    label: 'Summary step'
