@@ -32,7 +32,8 @@
         "typo3/cms-viewpage": "^9.5",
         "cweagans/composer-patches": "^1.6",
         "sangram-bhavar/laundrywebsite": "^1.0",
-        "launderywebcleaners/laundry-web-app": "dev-master"
+        "launderywebcleaners/laundry-web-app": "dev-master",
+        "typo3/cms-felogin": "^9.5"
     },
     "repositories": {
         "local": {

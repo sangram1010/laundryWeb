@@ -58,3 +58,7 @@ plugin.bootstrap_package.settings.scss {
     primary = #eb3e4a
     secondary = #013859
 }
+page{
+    # cat=plugin.tx_laundrywebsite//a; type=int+; label=Page ID used for logout
+    logout= 21
+}

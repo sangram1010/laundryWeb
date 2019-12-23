@@ -27,4 +27,7 @@ page {
     includeJSFooter {
         laundrywebsite_scripts = EXT:laundrywebsite/Resources/Public/JavaScript/Dist/scripts.js
     }
+
+    10.settings.page.logout = {$page.logout}
+    }
 }
