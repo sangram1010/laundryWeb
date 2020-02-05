@@ -9,10 +9,10 @@ call_user_func(
             'LaunderyWebCleaners.LaundryWebApp',
             'Laundry',
             [
+                'Order' => 'list, show, new, create, edit, update, delete',
                 'Login' => 'list, show, new, create, edit, update, delete',
                 'DeliveryPerson' => 'list, show, new, create, edit, update, delete',
                 'Customer' => 'list, show, new, create, edit, update, delete',
-                'Order' => 'list, show, new, create, edit, update, delete',
                 'Orderitem' => 'list, show, new, create, edit, update, delete',
                 'Address' => 'list, show, new, create, edit, update, delete',
                 'Status' => 'list, show, new, create, edit, update, delete',
@@ -20,13 +20,25 @@ call_user_func(
             ],
             // non-cacheable actions
             [
+                'Order' => 'create, update, delete',
                 'Login' => 'create, update, delete',
                 'DeliveryPerson' => 'create, update, delete',
                 'Customer' => 'create, update, delete',
-                'Order' => 'create, update, delete',
                 'Orderitem' => 'create, update, delete',
                 'Address' => 'create, update, delete',
                 'Status' => 'create, update, delete',
+                'Product' => 'create, update, delete'
+            ]
+        );
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'LaunderyWebCleaners.LaundryWebApp',
+            'LaundryProduct',
+            [
+                'Product' => 'list, show, new, create, edit, update, delete'
+
+            ],
+            // non-cacheable actions
+            [
                 'Product' => 'create, update, delete'
             ]
         );
@@ -44,6 +56,17 @@ call_user_func(
                                 CType = list
                                 list_type = laundrywebapp_laundry
                             }
+                            
+                        }
+                        LaundryProduct {
+                            iconIdentifier = laundry_web_app-plugin-laundry
+                            title = LaundryProduct
+                            description = LLL:EXT:laundry_web_app/Resources/Private/Language/locallang_db.xlf:tx_laundry_web_app_laundry.description
+                            tt_content_defValues {
+                                CType = list
+                                list_type = laundrywebapp_laundry
+                            }
+                            
                         }
                     }
                     show = *

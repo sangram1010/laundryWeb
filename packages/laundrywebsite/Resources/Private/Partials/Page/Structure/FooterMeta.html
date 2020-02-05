@@ -12,6 +12,7 @@
                     <f:if condition="{theme.language.enable}">
                         <div class="footer-language">
                             <f:render partial="Navigation/Language" arguments="{_all}" />
+
                         </div>
                     </f:if>
                     <f:if condition="{theme.copyright.enable}">
@@ -22,6 +23,8 @@
                     <f:if condition="{theme.socialmedia.enable}">
                         <div class="footer-sociallinks">
                             <f:render partial="Structure/SocialLinks" arguments="{_all}" />
+                            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+                            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
                         </div>
                     </f:if>
                 </div>
