@@ -65,19 +65,39 @@ call_user_func(
                 'Product' => 'create, update, delete'
             ]
         );
-//        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-//            'LaunderyWebCleaners.LaundryWebApp',
-//            'LaundryProduct',
-//            [
-//                'Product' => 'list, show, new, create, edit, update, delete'
-//
-//            ],
-//            // non-cacheable actions
-//            [
-//                'Product' => 'create, update, delete'
-//            ]
-//        );
 
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'LaunderyWebCleaners.LaundryWebApp',
+            'NewOrder',
+            [
+                'Order' => 'list, show, new, create, edit, update, delete',
+            ],
+            // non-cacheable actions
+            [
+                'Order' => 'list, show, new, create, edit, update, delete',            ]
+        );
+
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'LaunderyWebCleaners.LaundryWebApp',
+            'CurrentOrder',
+            [
+                'Order' => 'list, show, new, create, edit, update, delete',
+            ],
+            // non-cacheable actions
+            [
+                'Order' => 'list, show, new, create, edit, update, delete',            ]
+        );
+
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'LaunderyWebCleaners.LaundryWebApp',
+            'CompletedOrder',
+            [
+                'Order' => 'list, show, new, create, edit, update, delete',
+            ],
+            // non-cacheable actions
+            [
+                'Order' => 'list, show, new, create, edit, update, delete',            ]
+        );
         // wizards
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
             'mod {
@@ -116,6 +136,36 @@ call_user_func(
                         DeliveryPerson {
                             iconIdentifier = laundry_web_app-plugin-laundry
                             title = DeliveryPerson
+                            description = LLL:EXT:laundry_web_app/Resources/Private/Language/locallang_db.xlf:tx_laundry_web_app_laundry.description
+                            tt_content_defValues {
+                                CType = list
+                                list_type = laundrywebapp_laundry
+                            }
+                            
+                        }
+                         NewOrder {
+                            iconIdentifier = laundry_web_app-plugin-laundry
+                            title = NewOrder
+                            description = LLL:EXT:laundry_web_app/Resources/Private/Language/locallang_db.xlf:tx_laundry_web_app_laundry.description
+                            tt_content_defValues {
+                                CType = list
+                                list_type = laundrywebapp_laundry
+                            }
+                            
+                        }
+                         CurrentOrder {
+                            iconIdentifier = laundry_web_app-plugin-laundry
+                            title = CurrentOrder
+                            description = LLL:EXT:laundry_web_app/Resources/Private/Language/locallang_db.xlf:tx_laundry_web_app_laundry.description
+                            tt_content_defValues {
+                                CType = list
+                                list_type = laundrywebapp_laundry
+                            }
+                            
+                        }
+                         CompletedOrder {
+                            iconIdentifier = laundry_web_app-plugin-laundry
+                            title = CompletedOrder
                             description = LLL:EXT:laundry_web_app/Resources/Private/Language/locallang_db.xlf:tx_laundry_web_app_laundry.description
                             tt_content_defValues {
                                 CType = list
