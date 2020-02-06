@@ -16,14 +16,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => '',
+        'searchFields' => 'cloth_name,cloth_color',
         'iconfile' => 'EXT:laundry_web_app/Resources/Public/Icons/tx_laundrywebapp_domain_model_order.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, orderid, customerid, totalprice, datecreated, delivery_pid, statusid, ordetitems, customer, status, delivery_person',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, orderid, customerid, totalprice, datecreated, delivery_pid, statusid, cloth_name, cloth_color, cloth_quantity, cloth_price, ordetitems, customer, status, delivery_person',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, orderid, customerid, totalprice, datecreated, delivery_pid, statusid, ordetitems, customer, status, delivery_person, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, orderid, customerid, totalprice, datecreated, delivery_pid, statusid, cloth_name, cloth_color, cloth_quantity, cloth_price, ordetitems, customer, status, delivery_person, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -122,7 +122,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 4,
-                'eval' => 'int,required'
+                'eval' => 'int'
             ]
         ],
         'customerid' => [
@@ -140,7 +140,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'double2'
+                'eval' => 'double2,required'
             ]
         ],
         'datecreated' => [
@@ -150,7 +150,7 @@ return [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
                 'size' => 10,
-                'eval' => 'datetime,required',
+                'eval' => 'datetime',
                 'default' => time()
             ],
         ],
@@ -170,6 +170,42 @@ return [
                 'type' => 'input',
                 'size' => 4,
                 'eval' => 'int'
+            ]
+        ],
+        'cloth_name' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:laundry_web_app/Resources/Private/Language/locallang_db.xlf:tx_laundrywebapp_domain_model_order.cloth_name',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim,required'
+            ],
+        ],
+        'cloth_color' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:laundry_web_app/Resources/Private/Language/locallang_db.xlf:tx_laundrywebapp_domain_model_order.cloth_color',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim,required'
+            ],
+        ],
+        'cloth_quantity' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:laundry_web_app/Resources/Private/Language/locallang_db.xlf:tx_laundrywebapp_domain_model_order.cloth_quantity',
+            'config' => [
+                'type' => 'input',
+                'size' => 4,
+                'eval' => 'int,required'
+            ]
+        ],
+        'cloth_price' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:laundry_web_app/Resources/Private/Language/locallang_db.xlf:tx_laundrywebapp_domain_model_order.cloth_price',
+            'config' => [
+                'type' => 'input',
+                'size' => 4,
+                'eval' => 'int,required'
             ]
         ],
         'ordetitems' => [

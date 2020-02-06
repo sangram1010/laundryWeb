@@ -46,12 +46,9 @@ class Order extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $totalprice = 0.0;
 
     /**
-     * datecreated
-     * 
-     * @var \DateTime
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-     */
-    protected $datecreated = null;
+     * @var string
+
+    protected $datecreated = '';
 
     /**
      * deliveryPid
@@ -96,6 +93,26 @@ class Order extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \LaunderyWebCleaners\LaundryWebApp\Domain\Model\DeliveryPerson
      */
     protected $deliveryPerson = null;
+
+    /**
+     * @var array
+     */
+    protected $clothName= [];
+
+    /**
+     * @var array
+     */
+    protected $clothColor = [];
+
+    /**
+     * @var array
+     */
+    protected $clothQuantity = [];
+
+    /**
+     * @var array
+     */
+    protected $clothPrice = [];
 
     /**
      * __construct
@@ -350,5 +367,89 @@ class Order extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setDeliveryPerson(\LaunderyWebCleaners\LaundryWebApp\Domain\Model\DeliveryPerson $deliveryPerson)
     {
         $this->deliveryPerson = $deliveryPerson;
+    }
+
+    /**
+     * Returns the clothName
+     * 
+     * @return string $clothName
+     */
+    public function getClothName()
+    {
+        return $this->clothName;
+    }
+
+    /**
+     * Sets the clothName
+     * 
+     * @param string $clothName
+     * @return void
+     */
+    public function setClothName($clothName)
+    {
+        $this->clothName = $clothName;
+    }
+
+    /**
+     * Returns the clothColor
+     * 
+     * @return string $clothColor
+     */
+    public function getClothColor()
+    {
+        return $this->clothColor;
+    }
+
+    /**
+     * Sets the clothColor
+     * 
+     * @param string $clothColor
+     * @return void
+     */
+    public function setClothColor($clothColor)
+    {
+        $this->clothColor = $clothColor;
+    }
+
+    /**
+     * Returns the clothQuantity
+     * 
+     * @return int $clothQuantity
+     */
+    public function getClothQuantity()
+    {
+        return $this->clothQuantity;
+    }
+
+    /**
+     * Sets the clothQuantity
+     * 
+     * @param int $clothQuantity
+     * @return void
+     */
+    public function setClothQuantity($clothQuantity)
+    {
+        $this->clothQuantity = $clothQuantity;
+    }
+
+    /**
+     * Returns the clothPrice
+     * 
+     * @return int $clothPrice
+     */
+    public function getClothPrice()
+    {
+        return $this->clothPrice;
+    }
+
+    /**
+     * Sets the clothPrice
+     * 
+     * @param int $clothPrice
+     * @return void
+     */
+    public function setClothPrice($clothPrice)
+    {
+        $this->clothPrice = $clothPrice;
     }
 }

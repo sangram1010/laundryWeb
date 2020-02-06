@@ -2,6 +2,8 @@
 namespace LaunderyWebCleaners\LaundryWebApp\Domain\Repository;
 
 
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
+
 /***
  *
  * This file is part of the "LaundryWeb App" Extension for TYPO3 CMS.
@@ -20,4 +22,18 @@ namespace LaunderyWebCleaners\LaundryWebApp\Domain\Repository;
  */
 class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
+    /**
+     * @param string $search
+     * @return array|QueryResultInterface|Products[]
+     */
+    public function findBySearch(string $search)
+    {
+        $query = $this->createQuery();
+
+        $query->matching(
+
+            $query->like('productname', $search)
+        );
+        return $query->execute();
+    }
 }

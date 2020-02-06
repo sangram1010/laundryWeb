@@ -22,20 +22,20 @@ class Product extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
-     * productid
-     * 
-     * @var int
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-     */
-    protected $productid = 0;
-
-    /**
      * productname
      * 
      * @var string
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $productname = '';
+
+    /**
+     * productid
+     * 
+     * @var int
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     */
+    protected $productid = 0;
 
     /**
      * itemid

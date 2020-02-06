@@ -1,0 +1,166 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This template displays a NEW form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        New.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+    <h1>New Order</h1>
+    <style>
+        #order_table {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #order_table td, #order_table th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #order_table tr:nth-child(even){background-color: #f2f2f2;}
+
+        #order_table tr:hover {background-color: #ddd;}
+
+        #order_table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+        #nothing_selected_yet{
+            text-align: center;
+        }
+        #add_cloth{
+            background: #ff4c4c;
+            border: none;
+            padding: 10px;
+            width: 75px;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #cloth_type,#quantity{
+            width: 120px;
+            padding: 10px;
+            margin-right: 20px;
+        }
+        .color_white{
+            margin-right: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+        let clothes = {
+            1: {name:"Shirt",price:"$3"},
+            2: {name:"Jeans",price:"$4"},
+            3: {name:"Jacket",price:"$8"},
+            4: {name:"Blanket",price:"$10"}
+        }
+        document.addEventListener("DOMContentLoaded", function(event) {
+            document.getElementById("add_cloth").addEventListener("click", function(event){
+                event.preventDefault();
+                let cloth = (document.getElementById("cloth_type")).value;
+                let color = document.querySelector('input[name="color"]:checked').value;
+                let quantity = document.getElementById("quantity").value;
+                insertIntoOrderTable(cloth,color,quantity);
+            });
+        });
+        function insertIntoOrderTable(cloth,color,quantity){
+            //  remove placeholder
+            let placeholder = document.getElementById("nothing_selected_yet");
+            if( placeholder ){
+                placeholder.remove();
+            }
+            //  add in table
+            var table = document.getElementById("order_table");
+            var row = table.insertRow(-1);
+            //  insert data in row
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+
+            cell1.innerHTML = clothes[cloth].name;
+            cell2.innerHTML = color.toUpperCase();
+            cell3.innerHTML = quantity;
+            cell4.innerHTML = clothes[cloth].price;
+
+            //  add data in hidden form
+            addInputToHiddenForm("tx_laundrywebapp_neworder[newOrder][productname]",clothes[cloth].name);
+            addInputToHiddenForm("tx_laundrywebapp_neworder[newOrder][clothColor]",color.toUpperCase());
+            addInputToHiddenForm("tx_laundrywebapp_neworder[newOrder][clothQuantity]",quantity);
+            addInputToHiddenForm("tx_laundrywebapp_neworder[newOrder][clothPrice]",clothes[cloth].price);
+        }
+        function addInputToHiddenForm(name,value){
+            let input = document.createElement("input");
+            input.setAttribute("type", "hidden");
+            input.setAttribute("name", name+"[]");
+            input.setAttribute("value", value);
+            //  add input to form
+            document.getElementById("hidden_form").appendChild(input);
+        }
+    </script>
+    <div>
+        <div>
+            <form>
+                <div style="display: inline">
+                    <select name="type" id="cloth_type">
+                        <option value="1" selected>Shirt</option>
+                        <option value="2">Jeans</option>
+                        <option value="3">Jacket</option>
+                        <option value="4">Blanket</option>
+                    </select>
+                </div>
+
+                <div style="display: inline" class="color_white">
+                    <input type="radio" name="color" value="color" id="color_1" checked>
+                    <label for="color_1">Color</label>
+                    <input type="radio" name="color" value="white" id="color_2">
+                    <label for="color_2">White</label>
+                </div>
+
+                <div style="display: inline">
+                    <input type="number" min="1" max="5" id="quantity" value="1"/>
+                </div>
+
+                <button id="add_cloth">Add</button>
+            </form>
+        </div>
+        <br/>
+        <br/>
+        <table id="order_table">
+            <tr>
+                <th>Item</th>
+                <th>Color</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </table>
+        <h3 id="nothing_selected_yet">Nothing selected yet.</h3>
+    </div>
+
+<!--    <f:form.hidden value="[mixed]" class="NULL" dir="NULL" id="hidden_form" lang="NULL" style="NULL" title="NULL" accesskey="NULL" tabindex="123" onclick="NULL">-->
+<!--        &lt;!&ndash; tag content - may be ignored! &ndash;&gt;-->
+<!--        <f:form.submit value="Create new" />-->
+<!--    </f:form.hidden>-->
+
+    <f:flashMessages />
+
+    <f:render partial="FormErrors" />
+
+    <f:form action="create"  name="newOrder" object="{newOrder}" id="hidden_form">
+    <f:render partial="Order/FormFields" />
+    <f:form.submit value="Create new" />
+     </f:form>
+</f:section>
+</html>

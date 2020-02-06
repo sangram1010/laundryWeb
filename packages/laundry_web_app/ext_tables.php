@@ -10,37 +10,6 @@ call_user_func(
             'Laundry',
             'Laundry'
         );
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            'LaunderyWebCleaners.LaundryWebApp',
-            'LaundryProduct',
-            'LaundryProduct'
-        );
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            'LaunderyWebCleaners.LaundryWebApp',
-            'Customerlist',
-            'Customerlist'
-        );
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            'LaunderyWebCleaners.LaundryWebApp',
-            'DeliveryPerson',
-            'DeliveryPerson'
-        );
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            'LaunderyWebCleaners.LaundryWebApp',
-            'NewOrder',
-            'NewOrder'
-        );
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            'LaunderyWebCleaners.LaundryWebApp',
-            'CurrentOrder',
-            'CurrentOrder'
-        );
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            'LaunderyWebCleaners.LaundryWebApp',
-            'CompletedOrder',
-            'CompletedOrder'
-        );
-
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('laundry_web_app', 'Configuration/TypoScript', 'LaundryWeb App');
 

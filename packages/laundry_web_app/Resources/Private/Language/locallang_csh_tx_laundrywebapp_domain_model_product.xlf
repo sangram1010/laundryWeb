@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:laundry_web_app/Resources/Private/Language/locallang_csh" date="2019-12-22T02:57:22Z" product-name="laundry_web_app">
+	<file source-language="en" datatype="plaintext" original="EXT:laundry_web_app/Resources/Private/Language/locallang_csh" date="2020-02-06T18:34:28Z" product-name="laundry_web_app">
 		<header/>
 		<body>
 			<trans-unit id="productname.description" resname="productname.description">

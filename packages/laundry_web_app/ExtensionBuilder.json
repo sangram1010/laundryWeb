@@ -4,7 +4,7 @@
             "config": {
                 "position": [
                     165,
-                    7.1999969482421875
+                    7
                 ]
             },
             "name": "New Model Object",
@@ -77,7 +77,7 @@
             "config": {
                 "position": [
                     448,
-                    8.1999969482421875
+                    8
                 ]
             },
             "name": "New Model Object",
@@ -150,7 +150,7 @@
             "config": {
                 "position": [
                     163,
-                    215.19999694824219
+                    215
                 ]
             },
             "name": "New Model Object",
@@ -268,7 +268,7 @@
             "config": {
                 "position": [
                     451,
-                    207.19999694824219
+                    207
                 ]
             },
             "name": "New Model Object",
@@ -303,7 +303,7 @@
                             "propertyDescription": "",
                             "propertyIsExcludeField": true,
                             "propertyIsL10nModeExclude": false,
-                            "propertyIsRequired": true,
+                            "propertyIsRequired": false,
                             "propertyName": "orderid",
                             "propertyType": "Integer",
                             "uid": "405346125011"
@@ -325,7 +325,7 @@
                             "propertyDescription": "",
                             "propertyIsExcludeField": true,
                             "propertyIsL10nModeExclude": false,
-                            "propertyIsRequired": false,
+                            "propertyIsRequired": true,
                             "propertyName": "totalprice",
                             "propertyType": "Float",
                             "uid": "1236063386485"
@@ -336,7 +336,7 @@
                             "propertyDescription": "",
                             "propertyIsExcludeField": true,
                             "propertyIsL10nModeExclude": false,
-                            "propertyIsRequired": true,
+                            "propertyIsRequired": false,
                             "propertyName": "datecreated",
                             "propertyType": "DateTime",
                             "uid": "1003866606436"
@@ -362,6 +362,50 @@
                             "propertyName": "statusid",
                             "propertyType": "Integer",
                             "uid": "910485440660"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "clothName",
+                            "propertyType": "String",
+                            "uid": "718716045954"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "clothColor",
+                            "propertyType": "String",
+                            "uid": "1248896393547"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "clothQuantity",
+                            "propertyType": "Integer",
+                            "uid": "176130739711"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "clothPrice",
+                            "propertyType": "Integer",
+                            "uid": "130928880803"
                         }
                     ]
                 },
@@ -419,7 +463,7 @@
             "config": {
                 "position": [
                     719,
-                    8.1999969482421875
+                    8
                 ]
             },
             "name": "New Model Object",
@@ -526,7 +570,7 @@
             "config": {
                 "position": [
                     181,
-                    478.19999694824219
+                    478
                 ]
             },
             "name": "New Model Object",
@@ -653,8 +697,8 @@
         {
             "config": {
                 "position": [
-                    463,
-                    509.19999694824219
+                    420,
+                    736
                 ]
             },
             "name": "New Model Object",
@@ -716,7 +760,7 @@
             "config": {
                 "position": [
                     711,
-                    269.19999694824219
+                    269
                 ]
             },
             "name": "New Model Object",
@@ -953,9 +997,9 @@
             }
         }
     ],
-    "storagePath": "\/var\/www\/html\/public\/typo3conf\/ext\/",
+    "storagePath": "\/var\/www\/html\/packages\/",
     "log": {
-        "last_modified": "2019-12-22 02:57",
+        "last_modified": "2020-02-06 06:34",
         "extension_builder_version": "9.10.2",
         "be_user": " (1)"
     }

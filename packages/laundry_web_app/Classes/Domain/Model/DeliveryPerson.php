@@ -22,20 +22,20 @@ class DeliveryPerson extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
-     * deliveryPid
-     * 
-     * @var int
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-     */
-    protected $deliveryPid = 0;
-
-    /**
      * name
      * 
      * @var string
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $name = '';
+
+    /**
+     * deliveryPid
+     * 
+     * @var int
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     */
+    protected $deliveryPid = 0;
 
     /**
      * contactno

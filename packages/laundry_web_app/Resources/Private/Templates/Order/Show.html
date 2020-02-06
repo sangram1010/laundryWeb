@@ -13,11 +13,11 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="content">
-    <h1>Order Details</h1>
+    <h1>Single View for Order</h1>
 
     <f:flashMessages />
     <f:render partial="Order/Properties" arguments="{order:order}" />
     <f:link.action action="list">Back to list</f:link.action><br />
-<!--    <f:link.action action="new">New Order</f:link.action>-->
+    <f:link.action action="new">New Order</f:link.action>
 </f:section>
 </html>

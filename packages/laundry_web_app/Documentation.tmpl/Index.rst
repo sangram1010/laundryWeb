@@ -45,7 +45,7 @@ LaundryWeb App
     en
 
 :Copyright:
-    2019
+    2020
 
 :Author:
     Sangram Bhavar, Rajveer Sahney, Danish Umair Ahmad, Sukanta Maity

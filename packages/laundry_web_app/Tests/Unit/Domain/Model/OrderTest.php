@@ -183,6 +183,106 @@ class OrderTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
     /**
      * @test
      */
+    public function getClothNameReturnsInitialValueForString()
+    {
+        self::assertSame(
+            '',
+            $this->subject->getClothName()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setClothNameForStringSetsClothName()
+    {
+        $this->subject->setClothName('Conceived at T3CON10');
+
+        self::assertAttributeEquals(
+            'Conceived at T3CON10',
+            'clothName',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getClothColorReturnsInitialValueForString()
+    {
+        self::assertSame(
+            '',
+            $this->subject->getClothColor()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setClothColorForStringSetsClothColor()
+    {
+        $this->subject->setClothColor('Conceived at T3CON10');
+
+        self::assertAttributeEquals(
+            'Conceived at T3CON10',
+            'clothColor',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getClothQuantityReturnsInitialValueForInt()
+    {
+        self::assertSame(
+            0,
+            $this->subject->getClothQuantity()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setClothQuantityForIntSetsClothQuantity()
+    {
+        $this->subject->setClothQuantity(12);
+
+        self::assertAttributeEquals(
+            12,
+            'clothQuantity',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getClothPriceReturnsInitialValueForInt()
+    {
+        self::assertSame(
+            0,
+            $this->subject->getClothPrice()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setClothPriceForIntSetsClothPrice()
+    {
+        $this->subject->setClothPrice(12);
+
+        self::assertAttributeEquals(
+            12,
+            'clothPrice',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
     public function getOrdetitemsReturnsInitialValueForOrderitem()
     {
         $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();

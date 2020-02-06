@@ -22,6 +22,14 @@ class Customer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
+     * surname
+     * 
+     * @var string
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     */
+    protected $surname = '';
+
+    /**
      * customerid
      * 
      * @var int
@@ -44,14 +52,6 @@ class Customer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $firstname = '';
-
-    /**
-     * surname
-     * 
-     * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-     */
-    protected $surname = '';
 
     /**
      * addressid

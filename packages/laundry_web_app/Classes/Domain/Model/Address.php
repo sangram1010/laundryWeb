@@ -22,6 +22,14 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
+     * street
+     * 
+     * @var string
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     */
+    protected $street = '';
+
+    /**
      * addressid
      * 
      * @var int
@@ -36,14 +44,6 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $houseno = '';
-
-    /**
-     * street
-     * 
-     * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-     */
-    protected $street = '';
 
     /**
      * pincode

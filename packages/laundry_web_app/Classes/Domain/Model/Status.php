@@ -22,20 +22,20 @@ class Status extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
-     * statusid
-     * 
-     * @var int
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-     */
-    protected $statusid = 0;
-
-    /**
      * status
      * 
      * @var string
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $status = '';
+
+    /**
+     * statusid
+     * 
+     * @var int
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     */
+    protected $statusid = 0;
 
     /**
      * Returns the statusid

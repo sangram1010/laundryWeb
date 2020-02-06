@@ -37,14 +37,16 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     }
 
     /**
-     * action list
-     * 
-     * @return void
+     * @param string|null $search
      */
-    public function listAction()
+    public function listAction(string $search = null)
     {
-        $products = $this->productRepository->findAll();
-        $this->view->assign('products', $products);
+        if ($search = null) {
+            $products = $this->productRepository->findAll();
+        } else {
+            $products = $this->productRepository->findBysearch($search);
+        }
+        $this->view->assign('products', $search);
     }
 
     /**

@@ -68,16 +68,14 @@ class OrderController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     }
 
     /**
-     * action create
-     * 
      * @param \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Order $newOrder
-     * @return void
      */
     public function createAction(\LaunderyWebCleaners\LaundryWebApp\Domain\Model\Order $newOrder)
     {
         $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/typo3cms/extensions/extension_builder/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
-        $this->orderRepository->add($newOrder);
-        $this->redirect('list');
+        print_r($newOrder);
+        //$this->orderRepository->add($newOrder);
+        //$this->redirect('list');
     }
 
     /**

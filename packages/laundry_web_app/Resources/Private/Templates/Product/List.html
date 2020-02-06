@@ -13,15 +13,15 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="content">
-    <h1>Product List and Price</h1>
+    <h1>Listing for Product</h1>
 
     <f:flashMessages />
 
-    <table  class="table tx_laundrywebapp" >
+    <table  class="tx_laundrywebapp" >
         <tr>
             <th><f:translate key="tx_laundrywebapp_domain_model_product.productname" /></th>
             <th><f:translate key="tx_laundrywebapp_domain_model_product.productid" /></th>
-<!--            <th><f:translate key="tx_laundrywebapp_domain_model_product.itemid" /></th>-->
+            <th><f:translate key="tx_laundrywebapp_domain_model_product.itemid" /></th>
             <th><f:translate key="tx_laundrywebapp_domain_model_product.pricecolor" /></th>
             <th><f:translate key="tx_laundrywebapp_domain_model_product.pricewhite" /></th>
             <th> </th>
@@ -32,15 +32,15 @@ Otherwise your changes will be overwritten the next time you save the extension 
             <tr>
                 <td><f:link.action action="show" arguments="{product : product}">{product.productname}</f:link.action></td>
                 <td><f:link.action action="show" arguments="{product : product}">{product.productid}</f:link.action></td>
-<!--                <td><f:link.action action="show" arguments="{product : product}">{product.itemid}</f:link.action></td>-->
+                <td><f:link.action action="show" arguments="{product : product}">{product.itemid}</f:link.action></td>
                 <td><f:link.action action="show" arguments="{product : product}">{product.pricecolor}</f:link.action></td>
                 <td><f:link.action action="show" arguments="{product : product}">{product.pricewhite}</f:link.action></td>
-<!--                <td><f:link.action action="edit" arguments="{product : product}">Edit</f:link.action></td>-->
-<!--                <td><f:link.action action="delete" arguments="{product : product}">Delete</f:link.action></td>-->
+                <td><f:link.action action="edit" arguments="{product : product}">Edit</f:link.action></td>
+                <td><f:link.action action="delete" arguments="{product : product}">Delete</f:link.action></td>
             </tr>
         </f:for>
     </table>
 
-<!--    <f:link.action action="new">New Product</f:link.action>-->
+    <f:link.action action="new">New Product</f:link.action>
 </f:section>
 </html>

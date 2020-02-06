@@ -104,7 +104,7 @@ class Order extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
 
         //Do not remove the next line: It would break the functionality
-        $this->initStorageObjects();
+        //$this->initStorageObjects();
     }
 
     /**

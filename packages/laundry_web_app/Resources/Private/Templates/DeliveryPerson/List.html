@@ -13,14 +13,14 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="content">
-    <h1>Delivery Persons</h1>
+    <h1>Listing for DeliveryPerson</h1>
 
     <f:flashMessages />
 
-    <table  class="table tx_laundrywebapp" >
+    <table  class="tx_laundrywebapp" >
         <tr>
-            <th><f:translate key="tx_laundrywebapp_domain_model_deliveryperson.delivery_pid" /></th>
             <th><f:translate key="tx_laundrywebapp_domain_model_deliveryperson.name" /></th>
+            <th><f:translate key="tx_laundrywebapp_domain_model_deliveryperson.delivery_pid" /></th>
             <th><f:translate key="tx_laundrywebapp_domain_model_deliveryperson.contactno" /></th>
             <th> </th>
             <th> </th>
@@ -28,8 +28,8 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
         <f:for each="{deliveryPersons}" as="deliveryPerson">
             <tr>
-                <td><f:link.action action="show" arguments="{deliveryPerson : deliveryPerson}">{deliveryPerson.deliveryPid}</f:link.action></td>
                 <td><f:link.action action="show" arguments="{deliveryPerson : deliveryPerson}">{deliveryPerson.name}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{deliveryPerson : deliveryPerson}">{deliveryPerson.deliveryPid}</f:link.action></td>
                 <td><f:link.action action="show" arguments="{deliveryPerson : deliveryPerson}">{deliveryPerson.contactno}</f:link.action></td>
                 <td><f:link.action action="edit" arguments="{deliveryPerson : deliveryPerson}">Edit</f:link.action></td>
                 <td><f:link.action action="delete" arguments="{deliveryPerson : deliveryPerson}">Delete</f:link.action></td>
@@ -37,6 +37,6 @@ Otherwise your changes will be overwritten the next time you save the extension 
         </f:for>
     </table>
 
-    <f:link.action action="new">Add New DeliveryPerson</f:link.action>
+    <f:link.action action="new">New DeliveryPerson</f:link.action>
 </f:section>
 </html>
