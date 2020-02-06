@@ -13,19 +13,20 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="content">
-    <h1>Products and service charges</h1>
+    <h1>Product and service charges</h1>
 
-    <div class="row">
-        <div class="col-3">
-            Item
-        </div>
-        <div class="col-6">
-            Price_color
-        </div>
-        <div class="col-3">
-            <Price_white></Price_white>
-        </div>
-    </div>
+<!--    <div class="row">-->
+<!--        <div class="col-3">-->
+<!--            Item-->
+<!--        </div>-->
+<!--        <div class="col-6">-->
+<!--            Price_color-->
+<!--        </div>-->
+<!--        <div class="col-3">-->
+<!--            <Price_white></Price_white>-->
+<!--        </div>-->
+<!--    </div>-->
+    <f:render partial ="Product/Properties" arguments="{product:product}"/>
     <f:link.action action="list">Back to list</f:link.action><br />
 <!--    <f:link.action action="new">New Product</f:link.action>-->
 </f:section>

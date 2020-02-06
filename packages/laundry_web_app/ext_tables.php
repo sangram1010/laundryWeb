@@ -15,6 +15,18 @@ call_user_func(
             'LaundryProduct',
             'LaundryProduct'
         );
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'LaunderyWebCleaners.LaundryWebApp',
+            'Customerlist',
+            'Customerlist'
+        );
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'LaunderyWebCleaners.LaundryWebApp',
+            'DeliveryPerson',
+            'DeliveryPerson'
+        );
+
+
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('laundry_web_app', 'Configuration/TypoScript', 'LaundryWeb App');
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_laundrywebapp_domain_model_login', 'EXT:laundry_web_app/Resources/Private/Language/locallang_csh_tx_laundrywebapp_domain_model_login.xlf');
