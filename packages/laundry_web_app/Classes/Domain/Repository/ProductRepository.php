@@ -2,6 +2,9 @@
 namespace LaunderyWebCleaners\LaundryWebApp\Domain\Repository;
 
 
+use LaunderyWebCleaners\LaundryWebApp\Domain\Model\Product;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
+
 /***
  *
  * This file is part of the "LaundryWeb App" Extension for TYPO3 CMS.
@@ -20,4 +23,26 @@ namespace LaunderyWebCleaners\LaundryWebApp\Domain\Repository;
  */
 class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
+    /**
+     * @param string $search
+     * @return array|QueryResultInterface|Product[]
+     */
+    public function  findBySearch(string $search)
+    {
+        $query= $this->createQuery();
+
+        $constraints = [];
+        $constraints[] = $query->like('productname','%'. $search .'%');
+        $constraints[] = $query->like('productid','%'. $search .'%');
+        $constraints[] = $query->like('pricecolor','%'. $search .'%');
+        $constraints[] = $query->like('pricewhite','%'. $search .'%');
+
+        $query->matching(
+          $query->logicalOr(
+              $constraints
+          )
+        );
+
+        return $query->execute();
+    }
 }

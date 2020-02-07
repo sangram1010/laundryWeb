@@ -20,7 +20,7 @@ call_user_func(
             ],
             // non-cacheable actions
             [
-                'Order' => 'create, update, delete',
+                'Order' => 'list, show, new, create, edit, update, delete',
                 'Login' => 'create, update, delete',
                 'DeliveryPerson' => 'create, update, delete',
                 'Customer' => 'create, update, delete',
