@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:laundry_web_app/Resources/Private/Language/locallang_db" date="2019-12-22T02:57:22Z" product-name="laundry_web_app">
+	<file source-language="en" datatype="plaintext" original="EXT:laundry_web_app/Resources/Private/Language/locallang_db" date="2020-02-10T19:26:46Z" product-name="laundry_web_app">
 		<header/>
 		<body>
 			<trans-unit id="tx_laundrywebapp_domain_model_login" resname="tx_laundrywebapp_domain_model_login">
@@ -158,6 +158,9 @@
 			</trans-unit>
 			<trans-unit id="tx_laundrywebapp_domain_model_product.pricewhite" resname="tx_laundrywebapp_domain_model_product.pricewhite">
 				<source>Pricewhite</source>
+			</trans-unit>
+			<trans-unit id="tx_laundrywebapp_domain_model_product.image" resname="tx_laundrywebapp_domain_model_product.image">
+				<source>Image</source>
 			</trans-unit>
 			<trans-unit id="tx_laundry_web_app_laundry.name" resname="tx_laundry_web_app_laundry.name">
 				<source>Laundry</source>

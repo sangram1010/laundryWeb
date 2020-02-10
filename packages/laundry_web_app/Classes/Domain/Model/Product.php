@@ -22,20 +22,20 @@ class Product extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
-     * productid
-     * 
-     * @var int
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-     */
-    protected $productid = 0;
-
-    /**
      * productname
      * 
      * @var string
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $productname = '';
+
+    /**
+     * productid
+     * 
+     * @var int
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     */
+    protected $productid = 0;
 
     /**
      * itemid
@@ -60,6 +60,15 @@ class Product extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $pricewhite = 0;
+
+    /**
+     * image
+     * 
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     */
+    protected $image = null;
 
     /**
      * Returns the productid
@@ -164,5 +173,26 @@ class Product extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setProductname($productname)
     {
         $this->productname = $productname;
+    }
+
+    /**
+     * Returns the image
+     * 
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Sets the image
+     * 
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     * @return void
+     */
+    public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
+    {
+        $this->image = $image;
     }
 }

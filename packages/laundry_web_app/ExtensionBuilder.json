@@ -4,7 +4,7 @@
             "config": {
                 "position": [
                     165,
-                    7.1999969482421875
+                    6.5999755859375
                 ]
             },
             "name": "New Model Object",
@@ -77,7 +77,7 @@
             "config": {
                 "position": [
                     448,
-                    8.1999969482421875
+                    7.5999755859375
                 ]
             },
             "name": "New Model Object",
@@ -150,7 +150,7 @@
             "config": {
                 "position": [
                     163,
-                    215.19999694824219
+                    214.5999755859375
                 ]
             },
             "name": "New Model Object",
@@ -268,7 +268,7 @@
             "config": {
                 "position": [
                     451,
-                    207.19999694824219
+                    206.5999755859375
                 ]
             },
             "name": "New Model Object",
@@ -419,7 +419,7 @@
             "config": {
                 "position": [
                     719,
-                    8.1999969482421875
+                    7.5999755859375
                 ]
             },
             "name": "New Model Object",
@@ -526,7 +526,7 @@
             "config": {
                 "position": [
                     181,
-                    478.19999694824219
+                    477.5999755859375
                 ]
             },
             "name": "New Model Object",
@@ -654,7 +654,7 @@
             "config": {
                 "position": [
                     463,
-                    509.19999694824219
+                    508.5999755859375
                 ]
             },
             "name": "New Model Object",
@@ -716,7 +716,7 @@
             "config": {
                 "position": [
                     711,
-                    269.19999694824219
+                    268.5999755859375
                 ]
             },
             "name": "New Model Object",
@@ -799,6 +799,17 @@
                             "propertyName": "pricewhite",
                             "propertyType": "Integer",
                             "uid": "404462969420"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "image",
+                            "propertyType": "Image",
+                            "uid": "1045036819594"
                         }
                     ]
                 },
@@ -953,9 +964,9 @@
             }
         }
     ],
-    "storagePath": "\/var\/www\/html\/public\/typo3conf\/ext\/",
+    "storagePath": "\/var\/www\/html\/packages\/",
     "log": {
-        "last_modified": "2019-12-22 02:57",
+        "last_modified": "2020-02-10 07:26",
         "extension_builder_version": "9.10.2",
         "be_user": " (1)"
     }

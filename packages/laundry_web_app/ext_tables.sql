@@ -102,7 +102,8 @@ CREATE TABLE tx_laundrywebapp_domain_model_product (
 	productid int(11) DEFAULT '0' NOT NULL,
 	itemid int(11) DEFAULT '0' NOT NULL,
 	pricecolor double(11,2) DEFAULT '0.00' NOT NULL,
-	pricewhite int(11) DEFAULT '0' NOT NULL
+	pricewhite int(11) DEFAULT '0' NOT NULL,
+	image int(11) unsigned NOT NULL default '0'
 
 );
 
