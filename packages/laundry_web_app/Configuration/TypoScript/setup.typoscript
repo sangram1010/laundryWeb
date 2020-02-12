@@ -1,5 +1,5 @@
 
-plugin.tx_laundrywebapp_laundry {
+plugin.tx_laundrywebapp {
     view {
         templateRootPaths.0 = EXT:laundry_web_app/Resources/Private/Templates/
         templateRootPaths.1 = {$plugin.tx_laundrywebapp_laundry.view.templateRootPath}
@@ -21,6 +21,16 @@ plugin.tx_laundrywebapp_laundry {
     }
     mvc {
         #callDefaultActionIfActionCantBeResolved = 1
+    }
+    settings {
+        pages {
+            overview = {$plugin.tx_laundrywebapp_laundry.settings.pages.overview}
+            product = {$plugin.tx_laundrywebapp_laundry.settings.pages.product}
+        }
+        images {
+            product = {$plugin.tx_laundrywebapp_laundry.settings.images.product}
+            trending = {$plugin.tx_laundrywebapp_laundry.settings.images.trending}
+        }
     }
 }
 

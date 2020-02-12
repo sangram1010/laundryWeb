@@ -7,6 +7,11 @@ call_user_func(
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
             'LaunderyWebCleaners.LaundryWebApp',
+            'Overview',
+            'Product Overview'
+        );
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'LaunderyWebCleaners.LaundryWebApp',
             'Laundry',
             'Laundry'
         );

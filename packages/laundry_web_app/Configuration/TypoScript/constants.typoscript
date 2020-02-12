@@ -12,4 +12,18 @@ plugin.tx_laundrywebapp_laundry {
         # cat=plugin.tx_laundrywebapp_laundry//a; type=string; label=Default storage PID
         storagePid =
     }
+    settings {
+        pages {
+            # cat=plugin.tx_laundrywebapp_laundry//a; type=string; label=Page ID for rendering overview
+            overview =
+            # cat=plugin.tx_laundrywebapp_laundry//a; type=string; label=Page ID for rendering products
+            product =
+        }
+        images {
+            # cat=plugin.tx_laundrywebapp_laundry//a; type=string; label=Image location for recent product teaser
+            product=
+            # cat=plugin.tx_laundrywebapp_laundry//a; type=string; label=Image location for rendering trending product teaser
+            trending=
+        }
+    }
 }

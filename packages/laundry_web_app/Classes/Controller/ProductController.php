@@ -54,11 +54,13 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      * action show
      * 
      * @param \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Product $product
+     * @param string $back
      * @return void
      */
-    public function showAction(\LaunderyWebCleaners\LaundryWebApp\Domain\Model\Product $product)
+    public function showAction(\LaunderyWebCleaners\LaundryWebApp\Domain\Model\Product $product, string $back= null)
     {
         $this->view->assign('product', $product);
+        $this->view->assign('back', $back);
     }
 
     /**

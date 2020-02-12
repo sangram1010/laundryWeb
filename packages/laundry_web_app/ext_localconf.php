@@ -7,27 +7,32 @@ call_user_func(
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
             'LaunderyWebCleaners.LaundryWebApp',
+            'Overview',
+            [
+                'Dashboard' => 'overview',
+
+            ],
+            // non-cacheable actions
+            [
+
+            ]
+        );
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'LaunderyWebCleaners.LaundryWebApp',
             'Laundry',
             [
                 'Order' => 'list, show, new, create, edit, update, delete',
-                'Login' => 'list, show, new, create, edit, update, delete',
-                'DeliveryPerson' => 'list, show, new, create, edit, update, delete',
-                'Customer' => 'list, show, new, create, edit, update, delete',
-                'Orderitem' => 'list, show, new, create, edit, update, delete',
-                'Address' => 'list, show, new, create, edit, update, delete',
-                'Status' => 'list, show, new, create, edit, update, delete',
-                'Product' => 'list, show, new, create, edit, update, delete'
+//                'Login' => 'list, show, new, create, edit, update, delete',
+//                'DeliveryPerson' => 'list, show, new, create, edit, update, delete',
+//                'Customer' => 'list, show, new, create, edit, update, delete',
+//                'Orderitem' => 'list, show, new, create, edit, update, delete',
+//                'Address' => 'list, show, new, create, edit, update, delete',
+//                'Status' => 'list, show, new, create, edit, update, delete',
+//                'Product' => 'list, show, new, create, edit, update, delete'
             ],
             // non-cacheable actions
             [
                 'Order' => 'list, show, new, create, edit, update, delete',
-                'Login' => 'create, update, delete',
-                'DeliveryPerson' => 'create, update, delete',
-                'Customer' => 'create, update, delete',
-                'Orderitem' => 'create, update, delete',
-                'Address' => 'create, update, delete',
-                'Status' => 'create, update, delete',
-                'Product' => 'create, update, delete'
             ]
         );
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
@@ -110,6 +115,16 @@ call_user_func(
                             tt_content_defValues {
                                 CType = list
                                 list_type = laundrywebapp_laundry
+                            }
+                            
+                        }
+                        overview {
+                            iconIdentifier = laundry_web_app-plugin-laundry
+                            title = Product Overview
+                            description = Product Overview
+                            tt_content_defValues {
+                                CType = list
+                                list_type = laundrywebapp_overview
                             }
                             
                         }

@@ -3,6 +3,7 @@ namespace LaunderyWebCleaners\LaundryWebApp\Domain\Repository;
 
 
 use LaunderyWebCleaners\LaundryWebApp\Domain\Model\Product;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 
 /***
@@ -43,6 +44,38 @@ class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
           )
         );
 
+        return $query->execute();
+    }
+
+    /**
+     * @param int|null $limit
+     * @return array|QueryResultInterface|Product[]
+     */
+    public function findRecent(?int $limit = 5){
+
+        $query= $this->createQuery();
+        $query->setOrderings([
+            'productid' => QueryInterface::ORDER_ASCENDING
+        ]);
+        if($limit !== null){
+        $query->setLimit($limit);
+        }
+        return $query->execute();
+    }
+
+    /**
+     * @param int|null $limit
+     * @return array|QueryResultInterface|Product[]
+     */
+    public function findTrending(?int $limit = 5){
+
+        $query= $this->createQuery();
+        $query->setOrderings([
+            'pricecolor' => QueryInterface::ORDER_ASCENDING
+        ]);
+        if($limit !== null){
+            $query->setLimit($limit);
+        }
         return $query->execute();
     }
 }
