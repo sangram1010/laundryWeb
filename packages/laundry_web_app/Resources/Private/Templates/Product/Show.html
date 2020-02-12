@@ -17,9 +17,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
     <div class="row mb-3">
         <div class="col-3">
-            <f:if condition="product.images">
+            <f:if condition="{product.image}">
                 <f:then>
-                    <f:image src="{product.image.originalResource.publicUrl}" width="200"/>
+                    <f:image image="{product.image.originalResource}" width="200"/>
                 </f:then>
                 <f:else>
                     No images given...
