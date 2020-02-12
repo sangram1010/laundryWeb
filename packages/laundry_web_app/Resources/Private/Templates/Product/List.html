@@ -33,9 +33,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <div class="row">
             <div class="col-3">
                 <f:link.action action="show" controller="Product" arguments="{product:product}">
-                <f:if condition="product.images">
+                <f:if condition="{product.image}">
                     <f:then>
-                        <f:image src="{product.image.originalResource.publicUrl}" maxWidth="200" maxHeight="200"/>
+                        <f:image image="{product.image.originalResource}" maxWidth="200" maxHeight="200"/>
                     </f:then>
                     <f:else>
                         No images given...
