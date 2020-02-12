@@ -22,6 +22,14 @@ class Customer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
+     * surname
+     * 
+     * @var string
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     */
+    protected $surname = '';
+
+    /**
      * customerid
      * 
      * @var int
@@ -46,14 +54,6 @@ class Customer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $firstname = '';
 
     /**
-     * surname
-     * 
-     * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-     */
-    protected $surname = '';
-
-    /**
      * addressid
      * 
      * @var int
@@ -74,6 +74,13 @@ class Customer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Address
      */
     protected $address = null;
+
+    /**
+     * user
+     * 
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FrontendUser
+     */
+    protected $user = null;
 
     /**
      * Returns the customerid
@@ -220,5 +227,26 @@ class Customer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setAddress(\LaunderyWebCleaners\LaundryWebApp\Domain\Model\Address $address)
     {
         $this->address = $address;
+    }
+
+    /**
+     * Returns the user
+     * 
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FrontendUser $user
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Sets the user
+     * 
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FrontendUser $user
+     * @return void
+     */
+    public function setUser(\TYPO3\CMS\Extbase\Domain\Model\FrontendUser $user)
+    {
+        $this->user = $user;
     }
 }

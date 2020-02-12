@@ -70,13 +70,6 @@ class Order extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $statusid = 0;
 
     /**
-     * ordetitems
-     * 
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LaunderyWebCleaners\LaundryWebApp\Domain\Model\Orderitem>
-     */
-    protected $ordetitems = null;
-
-    /**
      * customer
      * 
      * @var \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Customer
@@ -98,6 +91,13 @@ class Order extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $deliveryPerson = null;
 
     /**
+     * products
+     * 
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LaunderyWebCleaners\LaundryWebApp\Domain\Model\Product>
+     */
+    protected $products = null;
+
+    /**
      * __construct
      */
     public function __construct()
@@ -117,7 +117,7 @@ class Order extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected function initStorageObjects()
     {
-        $this->ordetitems = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->products = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
@@ -247,49 +247,6 @@ class Order extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Adds a Orderitem
-     * 
-     * @param \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Orderitem $ordetitem
-     * @return void
-     */
-    public function addOrdetitem(\LaunderyWebCleaners\LaundryWebApp\Domain\Model\Orderitem $ordetitem)
-    {
-        $this->ordetitems->attach($ordetitem);
-    }
-
-    /**
-     * Removes a Orderitem
-     * 
-     * @param \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Orderitem $ordetitemToRemove The Orderitem to be removed
-     * @return void
-     */
-    public function removeOrdetitem(\LaunderyWebCleaners\LaundryWebApp\Domain\Model\Orderitem $ordetitemToRemove)
-    {
-        $this->ordetitems->detach($ordetitemToRemove);
-    }
-
-    /**
-     * Returns the ordetitems
-     * 
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LaunderyWebCleaners\LaundryWebApp\Domain\Model\Orderitem> $ordetitems
-     */
-    public function getOrdetitems()
-    {
-        return $this->ordetitems;
-    }
-
-    /**
-     * Sets the ordetitems
-     * 
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LaunderyWebCleaners\LaundryWebApp\Domain\Model\Orderitem> $ordetitems
-     * @return void
-     */
-    public function setOrdetitems(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $ordetitems)
-    {
-        $this->ordetitems = $ordetitems;
-    }
-
-    /**
      * Returns the customer
      * 
      * @return \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Customer $customer
@@ -350,5 +307,48 @@ class Order extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setDeliveryPerson(\LaunderyWebCleaners\LaundryWebApp\Domain\Model\DeliveryPerson $deliveryPerson)
     {
         $this->deliveryPerson = $deliveryPerson;
+    }
+
+    /**
+     * Adds a Product
+     * 
+     * @param \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Product $product
+     * @return void
+     */
+    public function addProduct(\LaunderyWebCleaners\LaundryWebApp\Domain\Model\Product $product)
+    {
+        $this->products->attach($product);
+    }
+
+    /**
+     * Removes a Product
+     * 
+     * @param \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Product $productToRemove The Product to be removed
+     * @return void
+     */
+    public function removeProduct(\LaunderyWebCleaners\LaundryWebApp\Domain\Model\Product $productToRemove)
+    {
+        $this->products->detach($productToRemove);
+    }
+
+    /**
+     * Returns the products
+     * 
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LaunderyWebCleaners\LaundryWebApp\Domain\Model\Product> $products
+     */
+    public function getProducts()
+    {
+        return $this->products;
+    }
+
+    /**
+     * Sets the products
+     * 
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LaunderyWebCleaners\LaundryWebApp\Domain\Model\Product> $products
+     * @return void
+     */
+    public function setProducts(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $products)
+    {
+        $this->products = $products;
     }
 }

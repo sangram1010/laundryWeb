@@ -1,0 +1,29 @@
+
+plugin.tx_laundrywebapp_laundry {
+    view {
+        # cat=plugin.tx_laundrywebapp_laundry/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:laundry_web_app/Resources/Private/Templates/
+        # cat=plugin.tx_laundrywebapp_laundry/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:laundry_web_app/Resources/Private/Partials/
+        # cat=plugin.tx_laundrywebapp_laundry/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:laundry_web_app/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_laundrywebapp_laundry//a; type=string; label=Default storage PID
+        storagePid =
+    }
+    settings {
+        pages {
+            # cat=plugin.tx_laundrywebapp_laundry//a; type=string; label=Page ID for rendering overview
+            overview =
+            # cat=plugin.tx_laundrywebapp_laundry//a; type=string; label=Page ID for rendering products
+            product =
+        }
+        images {
+            # cat=plugin.tx_laundrywebapp_laundry//a; type=string; label=Image location for recent product teaser
+            product=
+            # cat=plugin.tx_laundrywebapp_laundry//a; type=string; label=Image location for rendering trending product teaser
+            trending=
+        }
+    }
+}

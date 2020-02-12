@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:laundry_web_app/Resources/Private/Language/locallang_csh" date="2019-12-22T02:57:22Z" product-name="laundry_web_app">
+	<file source-language="en" datatype="plaintext" original="EXT:laundry_web_app/Resources/Private/Language/locallang_csh" date="2020-02-12T20:18:49Z" product-name="laundry_web_app">
 		<header/>
 		<body>
 			<trans-unit id="orderid.description" resname="orderid.description">
@@ -21,9 +21,6 @@
 			<trans-unit id="statusid.description" resname="statusid.description">
 				<source>statusid</source>
 			</trans-unit>
-			<trans-unit id="ordetitems.description" resname="ordetitems.description">
-				<source>ordetitems</source>
-			</trans-unit>
 			<trans-unit id="customer.description" resname="customer.description">
 				<source>customer</source>
 			</trans-unit>
@@ -32,6 +29,9 @@
 			</trans-unit>
 			<trans-unit id="delivery_person.description" resname="delivery_person.description">
 				<source>deliveryPerson</source>
+			</trans-unit>
+			<trans-unit id="products.description" resname="products.description">
+				<source>products</source>
 			</trans-unit>
 		</body>
 	</file>

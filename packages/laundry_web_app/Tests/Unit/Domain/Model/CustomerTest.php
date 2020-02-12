@@ -203,4 +203,18 @@ class CustomerTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
             $this->subject
         );
     }
+
+    /**
+     * @test
+     */
+    public function getUserReturnsInitialValueForFrontendUser()
+    {
+    }
+
+    /**
+     * @test
+     */
+    public function setUserForFrontendUserSetsUser()
+    {
+    }
 }

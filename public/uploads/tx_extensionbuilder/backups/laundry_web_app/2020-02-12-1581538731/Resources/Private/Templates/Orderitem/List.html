@@ -1,0 +1,46 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+    <h1>Listing for Orderitem</h1>
+
+    <f:flashMessages />
+
+    <table  class="tx_laundrywebapp" >
+        <tr>
+            <th><f:translate key="tx_laundrywebapp_domain_model_orderitem.itemid" /></th>
+            <th><f:translate key="tx_laundrywebapp_domain_model_orderitem.orderid" /></th>
+            <th><f:translate key="tx_laundrywebapp_domain_model_orderitem.productid" /></th>
+            <th><f:translate key="tx_laundrywebapp_domain_model_orderitem.color" /></th>
+            <th><f:translate key="tx_laundrywebapp_domain_model_orderitem.quantity" /></th>
+            <th> </th>
+            <th> </th>
+        </tr>
+
+        <f:for each="{orderitems}" as="orderitem">
+            <tr>
+                <td><f:link.action action="show" arguments="{orderitem : orderitem}">{orderitem.itemid}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{orderitem : orderitem}">{orderitem.orderid}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{orderitem : orderitem}">{orderitem.productid}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{orderitem : orderitem}">{orderitem.color}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{orderitem : orderitem}">{orderitem.quantity}</f:link.action></td>
+                <td><f:link.action action="edit" arguments="{orderitem : orderitem}">Edit</f:link.action></td>
+                <td><f:link.action action="delete" arguments="{orderitem : orderitem}">Delete</f:link.action></td>
+            </tr>
+        </f:for>
+    </table>
+
+    <f:link.action action="new">New Orderitem</f:link.action>
+</f:section>
+</html>
