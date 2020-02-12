@@ -45,7 +45,9 @@
 			<f:translate key="tx_laundrywebapp_domain_model_product.image" />
 		</td>
 		<td>
-				<f:image src="{product.image.originalResource.publicUrl}" width="200"/>
+			<f:if condition="{product.image}">
+				<f:image image="{product.image.originalResource}" width="200"/>
+			</f:if>
 		</td>
 	</tr>
 </table>
