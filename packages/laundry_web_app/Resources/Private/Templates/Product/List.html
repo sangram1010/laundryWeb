@@ -63,14 +63,22 @@ Otherwise your changes will be overwritten the next time you save the extension 
                     Price for color: &nbsp;
                     <f:link.action action="show" arguments="{product : product}">
                         <strong>{product.pricecolor -> f:format.currency(currencySign:'€')}</strong>
-                        <a class="btn btn-info" role="button">Add to Order</a>
+                        <f:link.action action="add" controller="Order" pluginName="NewOrder" arguments="{product:product}"
+                                       pageUid="{settings.pages.order}" class="btn btn-info">
+                            Add to Order
+                        </f:link.action>
+
                     </f:link.action>
                 </P>
                 <P>
                     Price for White: &nbsp;
                     <f:link.action action="show" arguments="{product : product}">
                         <strong>{product.pricewhite->f:format.currency(currencySign:'€')}</strong></f:link.action>
-                    <a class="btn btn-info" role="button">Add to Order</a>
+                    <f:link.action action="add" controller="Order" pluginName="NewOrder" arguments="{product:product}"
+                                   pageUid="{settings.pages.order}" class="btn btn-info">
+                        Add to Order
+                    </f:link.action>
+
                 </P>
             </div>
         </div>

@@ -15,9 +15,58 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:section name="content">
     <h1>Order Details</h1>
 
-    <f:flashMessages />
-    <f:render partial="Order/Properties" arguments="{order:order}" />
-    <f:link.action action="list">Back to list</f:link.action><br />
+    <f:if condition="customer">
+        <h4>Hello {customer.firstname}!</h4>
+    </f:if>
+    <hr>
+    <f:for each="{order.products}" as="product">
+        <div class="row">
+            <div class="col-3">
+                <f:link.action action="show" controller="Product" arguments="{product:product}">
+                    <f:if condition="{product.image}">
+                        <f:then>
+                            <f:image image="{product.image.originalResource}" maxWidth="200" maxHeight="200"/>
+                        </f:then>
+                        <f:else>
+                            No images given...
+                        </f:else>
+                    </f:if>
+                </f:link.action>
+            </div>
+            <div class="col-6">
+                <h3><f:link.action action="show" arguments="{product : product}" controller="Product">
+                    {product.productname}
+                </f:link.action></h3>
+                <p>
+                    Product Id: &nbsp;
+                    <f:link.action action="show" arguments="{product : product}" controller="Product">
+                        {product.productid}
+                    </f:link.action>
+                </p>
+                <p>
+                    Product Name: &nbsp;
+                    <f:link.action action="show" arguments="{product : product}">{product.productname}</f:link.action>
+                </p>
+            </div>
+            <div class="col-3">
+                <P>
+                    Price: &nbsp;
+                    <f:link.action action="show" arguments="{product : product}">
+                        <strong>{product.pricecolor -> f:format.currency(currencySign:'€')}</strong>
+                        <f:link.action action="remove" controller="Order" pluginName="NewOrder" arguments="{product:product}"
+                                       pageUid="{settings.pages.order}" class="btn btn-warning">
+                             Remove from Order
+                        </f:link.action>
+
+                    </f:link.action>
+                </P>
+            </div>
+        </div>
+        <hr>
+    </f:for>
+<!--    <f:flashMessages />-->
+<!--    <f:render partial="Order/Properties" arguments="{order:order}" />-->
+<!--    <f:link.action action="list">Back to list</f:link.action><br />-->
 <!--    <f:link.action action="new">New Order</f:link.action>-->
 </f:section>
 </html>

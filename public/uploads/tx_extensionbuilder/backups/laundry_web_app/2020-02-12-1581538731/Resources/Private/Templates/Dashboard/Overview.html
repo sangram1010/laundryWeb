@@ -1,0 +1,70 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+    <f:debug>{settings}</f:debug>
+  <div class="row">
+      <div class="col-12 col-md-4 mb-3">
+          <div class="border rounded shadow p-3">
+              <div class="text-center">
+                  <f:if condition="{settings.images.product}">
+                      <f:then>
+                          <f:image src="{settings.images.product}" width="300" height="200" class="img-fluid"/>
+                      </f:then>
+                      <f:else>
+                          No images given...
+                      </f:else>
+                  </f:if>
+              </div>
+            <hr>
+            <h4>Recent Products</h4>
+            <f:for each="{products}" as="product">
+                <div class="row">
+                    <div class="col-8">
+                      <f:link.action action="show" controller="Product" pageUid="{settings.pages.product}" arguments="{product:product, back:'overview'}">
+                        {product.productname}
+                      </f:link.action>
+                    </div>
+                </div>
+            </f:for>
+          </div>
+      </div>
+      <div class="col-12 col-md-4 mb-3">
+          <div class="border rounded shadow p-3">
+              <div class="text-center">
+                  <f:if condition="{settings.images.trending}">
+                      <f:then>
+                          <f:image src="{settings.images.trending}" width="300" height="200" class="img-fluid"/>
+                      </f:then>
+                      <f:else>
+                          No images given...
+                      </f:else>
+                  </f:if>
+              </div>
+              <hr>
+              <h4>Trending Products</h4>
+              <f:for each="{products1}" as="product">
+                  <div class="row">
+                      <div class="col-8">
+                          <f:link.action action="show" controller="Product" pageUid="{settings.pages.product}" arguments="{product:product, back:'overview'}">
+                              {product.productname}
+                          </f:link.action>
+                      </div>
+                  </div>
+              </f:for>
+          </div>
+      </div>
+  </div>
+</f:section>
+</html>

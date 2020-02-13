@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dbb4759b2405ea1d2b2bc555063da3bd",
+    "content-hash": "1ddba53ed880bd09b70c57336ef08ac1",
     "packages": [
         {
             "name": "algo26-matthias/idna-convert",
@@ -1146,6 +1146,43 @@
                 "php"
             ],
             "time": "2019-11-08T13:50:10+00:00"
+        },
+        {
+            "name": "oliver-hader/session-service",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ohader/session-service.git",
+                "reference": "91261eb4694066bffa8e6c2257f7579a75fa8591"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ohader/session-service/zipball/91261eb4694066bffa8e6c2257f7579a75fa8591",
+                "reference": "91261eb4694066bffa8e6c2257f7579a75fa8591",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.2",
+                "typo3/cms-core": "^9.5"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "session_service"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OliverHader\\SessionService\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "TYPO3 Extbase session & frontend user service",
+            "time": "2019-12-09T21:45:40+00:00"
         },
         {
             "name": "psr/cache",
@@ -4605,12 +4642,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfTYPO3/extension_builder.git",
-                "reference": "d6b734fa13555a91bbf1e462c478a95c6f8ce0e0"
+                "reference": "e1342410a9f2172d2c3d58ee7a21eac597f7e40e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfTYPO3/extension_builder/zipball/d6b734fa13555a91bbf1e462c478a95c6f8ce0e0",
-                "reference": "d6b734fa13555a91bbf1e462c478a95c6f8ce0e0",
+                "url": "https://api.github.com/repos/FriendsOfTYPO3/extension_builder/zipball/e1342410a9f2172d2c3d58ee7a21eac597f7e40e",
+                "reference": "e1342410a9f2172d2c3d58ee7a21eac597f7e40e",
                 "shasum": ""
             },
             "require": {
@@ -4660,7 +4697,7 @@
                 "extension_builder",
                 "typo3"
             ],
-            "time": "2019-12-09T23:25:50+00:00"
+            "time": "2020-02-02T08:38:47+00:00"
         }
     ],
     "aliases": [],

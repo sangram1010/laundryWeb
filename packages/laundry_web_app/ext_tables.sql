@@ -31,7 +31,8 @@ CREATE TABLE tx_laundrywebapp_domain_model_customer (
 	firstname varchar(255) DEFAULT '' NOT NULL,
 	addressid int(11) DEFAULT '0' NOT NULL,
 	login int(11) unsigned DEFAULT '0',
-	address int(11) unsigned DEFAULT '0'
+	address int(11) unsigned DEFAULT '0',
+	user int(11) unsigned DEFAULT '0'
 
 );
 
@@ -46,24 +47,10 @@ CREATE TABLE tx_laundrywebapp_domain_model_order (
 	datecreated int(11) DEFAULT '0' NOT NULL,
 	delivery_pid int(11) DEFAULT '0' NOT NULL,
 	statusid int(11) DEFAULT '0' NOT NULL,
-	ordetitems text NOT NULL,
 	customer int(11) unsigned DEFAULT '0',
 	status int(11) unsigned DEFAULT '0',
-	delivery_person int(11) unsigned DEFAULT '0'
-
-);
-
-#
-# Table structure for table 'tx_laundrywebapp_domain_model_orderitem'
-#
-CREATE TABLE tx_laundrywebapp_domain_model_orderitem (
-
-	itemid int(11) DEFAULT '0' NOT NULL,
-	orderid int(11) DEFAULT '0' NOT NULL,
-	productid int(11) DEFAULT '0' NOT NULL,
-	color varchar(255) DEFAULT '' NOT NULL,
-	quantity int(11) DEFAULT '0' NOT NULL,
-	product int(11) unsigned DEFAULT '0' NOT NULL
+	delivery_person int(11) unsigned DEFAULT '0',
+	products text NOT NULL
 
 );
 
@@ -106,18 +93,4 @@ CREATE TABLE tx_laundrywebapp_domain_model_product (
 	pricewhite int(11) DEFAULT '0' NOT NULL,
 	image int(11) unsigned NOT NULL default '0'
 
-);
-
-#
-# Table structure for table 'tx_laundrywebapp_orderitem_product_mm'
-#
-CREATE TABLE tx_laundrywebapp_orderitem_product_mm (
-	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-	sorting int(11) unsigned DEFAULT '0' NOT NULL,
-	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-
-	PRIMARY KEY (uid_local,uid_foreign),
-	KEY uid_local (uid_local),
-	KEY uid_foreign (uid_foreign)
 );

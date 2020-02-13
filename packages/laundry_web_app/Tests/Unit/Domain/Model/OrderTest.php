@@ -183,69 +183,6 @@ class OrderTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
     /**
      * @test
      */
-    public function getOrdetitemsReturnsInitialValueForOrderitem()
-    {
-        $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        self::assertEquals(
-            $newObjectStorage,
-            $this->subject->getOrdetitems()
-        );
-    }
-
-    /**
-     * @test
-     */
-    public function setOrdetitemsForObjectStorageContainingOrderitemSetsOrdetitems()
-    {
-        $ordetitem = new \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Orderitem();
-        $objectStorageHoldingExactlyOneOrdetitems = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $objectStorageHoldingExactlyOneOrdetitems->attach($ordetitem);
-        $this->subject->setOrdetitems($objectStorageHoldingExactlyOneOrdetitems);
-
-        self::assertAttributeEquals(
-            $objectStorageHoldingExactlyOneOrdetitems,
-            'ordetitems',
-            $this->subject
-        );
-    }
-
-    /**
-     * @test
-     */
-    public function addOrdetitemToObjectStorageHoldingOrdetitems()
-    {
-        $ordetitem = new \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Orderitem();
-        $ordetitemsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
-            ->setMethods(['attach'])
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $ordetitemsObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($ordetitem));
-        $this->inject($this->subject, 'ordetitems', $ordetitemsObjectStorageMock);
-
-        $this->subject->addOrdetitem($ordetitem);
-    }
-
-    /**
-     * @test
-     */
-    public function removeOrdetitemFromObjectStorageHoldingOrdetitems()
-    {
-        $ordetitem = new \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Orderitem();
-        $ordetitemsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
-            ->setMethods(['detach'])
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $ordetitemsObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($ordetitem));
-        $this->inject($this->subject, 'ordetitems', $ordetitemsObjectStorageMock);
-
-        $this->subject->removeOrdetitem($ordetitem);
-    }
-
-    /**
-     * @test
-     */
     public function getCustomerReturnsInitialValueForCustomer()
     {
         self::assertEquals(
@@ -319,5 +256,68 @@ class OrderTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
             'deliveryPerson',
             $this->subject
         );
+    }
+
+    /**
+     * @test
+     */
+    public function getProductsReturnsInitialValueForProduct()
+    {
+        $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        self::assertEquals(
+            $newObjectStorage,
+            $this->subject->getProducts()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setProductsForObjectStorageContainingProductSetsProducts()
+    {
+        $product = new \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Product();
+        $objectStorageHoldingExactlyOneProducts = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $objectStorageHoldingExactlyOneProducts->attach($product);
+        $this->subject->setProducts($objectStorageHoldingExactlyOneProducts);
+
+        self::assertAttributeEquals(
+            $objectStorageHoldingExactlyOneProducts,
+            'products',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function addProductToObjectStorageHoldingProducts()
+    {
+        $product = new \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Product();
+        $productsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['attach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $productsObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($product));
+        $this->inject($this->subject, 'products', $productsObjectStorageMock);
+
+        $this->subject->addProduct($product);
+    }
+
+    /**
+     * @test
+     */
+    public function removeProductFromObjectStorageHoldingProducts()
+    {
+        $product = new \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Product();
+        $productsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['detach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $productsObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($product));
+        $this->inject($this->subject, 'products', $productsObjectStorageMock);
+
+        $this->subject->removeProduct($product);
     }
 }

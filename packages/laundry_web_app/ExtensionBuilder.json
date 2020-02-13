@@ -4,7 +4,7 @@
             "config": {
                 "position": [
                     165,
-                    6.5999755859375
+                    6
                 ]
             },
             "name": "New Model Object",
@@ -77,7 +77,7 @@
             "config": {
                 "position": [
                     448,
-                    7.5999755859375
+                    7
                 ]
             },
             "name": "New Model Object",
@@ -150,7 +150,7 @@
             "config": {
                 "position": [
                     163,
-                    214.5999755859375
+                    214
                 ]
             },
             "name": "New Model Object",
@@ -259,6 +259,17 @@
                             "relationWire": "[wired]",
                             "renderType": "selectMultipleSideBySide",
                             "uid": "745340907907"
+                        },
+                        {
+                            "foreignRelationClass": "\\TYPO3\\CMS\\Extbase\\Domain\\Model\\FrontendUser",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "user",
+                            "relationType": "zeroToOne",
+                            "relationWire": "[wired]",
+                            "renderType": "selectMultipleSideBySide",
+                            "uid": "1071097885460"
                         }
                     ]
                 }
@@ -268,7 +279,7 @@
             "config": {
                 "position": [
                     451,
-                    206.5999755859375
+                    206
                 ]
             },
             "name": "New Model Object",
@@ -372,17 +383,6 @@
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
                             "relationDescription": "",
-                            "relationName": "ordetitems",
-                            "relationType": "zeroToMany",
-                            "relationWire": "[wired]",
-                            "renderType": "selectMultipleSideBySide",
-                            "uid": "954480247979"
-                        },
-                        {
-                            "foreignRelationClass": "",
-                            "lazyLoading": false,
-                            "propertyIsExcludeField": true,
-                            "relationDescription": "",
                             "relationName": "customer",
                             "relationType": "manyToOne",
                             "relationWire": "[wired]",
@@ -410,113 +410,17 @@
                             "relationWire": "[wired]",
                             "renderType": "selectMultipleSideBySide",
                             "uid": "121974576985"
-                        }
-                    ]
-                }
-            }
-        },
-        {
-            "config": {
-                "position": [
-                    719,
-                    7.5999755859375
-                ]
-            },
-            "name": "New Model Object",
-            "value": {
-                "actionGroup": {
-                    "_default0_list": true,
-                    "_default1_show": true,
-                    "_default2_new_create": true,
-                    "_default3_edit_update": true,
-                    "_default4_delete": true,
-                    "customActions": []
-                },
-                "name": "Orderitem",
-                "objectsettings": {
-                    "addDeletedField": true,
-                    "addHiddenField": true,
-                    "addStarttimeEndtimeFields": true,
-                    "aggregateRoot": true,
-                    "categorizable": false,
-                    "description": "",
-                    "mapToTable": "",
-                    "parentClass": "",
-                    "sorting": false,
-                    "type": "Entity",
-                    "uid": "1381439185579"
-                },
-                "propertyGroup": {
-                    "properties": [
-                        {
-                            "allowedFileTypes": "",
-                            "maxItems": "1",
-                            "propertyDescription": "",
-                            "propertyIsExcludeField": true,
-                            "propertyIsL10nModeExclude": false,
-                            "propertyIsRequired": true,
-                            "propertyName": "itemid",
-                            "propertyType": "Integer",
-                            "uid": "480341464612"
                         },
-                        {
-                            "allowedFileTypes": "",
-                            "maxItems": "1",
-                            "propertyDescription": "",
-                            "propertyIsExcludeField": true,
-                            "propertyIsL10nModeExclude": false,
-                            "propertyIsRequired": false,
-                            "propertyName": "orderid",
-                            "propertyType": "Integer",
-                            "uid": "572108105609"
-                        },
-                        {
-                            "allowedFileTypes": "",
-                            "maxItems": "1",
-                            "propertyDescription": "",
-                            "propertyIsExcludeField": true,
-                            "propertyIsL10nModeExclude": false,
-                            "propertyIsRequired": false,
-                            "propertyName": "productid",
-                            "propertyType": "Integer",
-                            "uid": "706600851705"
-                        },
-                        {
-                            "allowedFileTypes": "",
-                            "maxItems": "1",
-                            "propertyDescription": "",
-                            "propertyIsExcludeField": true,
-                            "propertyIsL10nModeExclude": false,
-                            "propertyIsRequired": false,
-                            "propertyName": "color",
-                            "propertyType": "String",
-                            "uid": "1151793692294"
-                        },
-                        {
-                            "allowedFileTypes": "",
-                            "maxItems": "1",
-                            "propertyDescription": "",
-                            "propertyIsExcludeField": true,
-                            "propertyIsL10nModeExclude": false,
-                            "propertyIsRequired": false,
-                            "propertyName": "quantity",
-                            "propertyType": "Integer",
-                            "uid": "269446817480"
-                        }
-                    ]
-                },
-                "relationGroup": {
-                    "relations": [
                         {
                             "foreignRelationClass": "",
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
                             "relationDescription": "",
-                            "relationName": "product",
-                            "relationType": "manyToMany",
+                            "relationName": "products",
+                            "relationType": "zeroToMany",
                             "relationWire": "[wired]",
                             "renderType": "selectMultipleSideBySide",
-                            "uid": "879701680775"
+                            "uid": "1258487267649"
                         }
                     ]
                 }
@@ -525,8 +429,8 @@
         {
             "config": {
                 "position": [
-                    181,
-                    477.5999755859375
+                    780,
+                    489
                 ]
             },
             "name": "New Model Object",
@@ -653,8 +557,8 @@
         {
             "config": {
                 "position": [
-                    463,
-                    508.5999755859375
+                    821,
+                    271
                 ]
             },
             "name": "New Model Object",
@@ -715,8 +619,8 @@
         {
             "config": {
                 "position": [
-                    711,
-                    268.5999755859375
+                    782,
+                    36
                 ]
             },
             "name": "New Model Object",
@@ -883,18 +787,6 @@
             "src": {
                 "moduleId": 3,
                 "terminal": "relationWire_0",
-                "uid": "954480247979"
-            },
-            "tgt": {
-                "moduleId": 4,
-                "terminal": "SOURCES",
-                "uid": "1381439185579"
-            }
-        },
-        {
-            "src": {
-                "moduleId": 3,
-                "terminal": "relationWire_1",
                 "uid": "770451006253"
             },
             "tgt": {
@@ -906,11 +798,11 @@
         {
             "src": {
                 "moduleId": 3,
-                "terminal": "relationWire_2",
+                "terminal": "relationWire_1",
                 "uid": "451567110958"
             },
             "tgt": {
-                "moduleId": 6,
+                "moduleId": 5,
                 "terminal": "SOURCES",
                 "uid": "489633148726"
             }
@@ -918,7 +810,7 @@
         {
             "src": {
                 "moduleId": 3,
-                "terminal": "relationWire_3",
+                "terminal": "relationWire_2",
                 "uid": "121974576985"
             },
             "tgt": {
@@ -934,7 +826,7 @@
                 "uid": "745340907907"
             },
             "tgt": {
-                "moduleId": 5,
+                "moduleId": 4,
                 "terminal": "SOURCES",
                 "uid": "973937703750"
             }
@@ -953,12 +845,12 @@
         },
         {
             "src": {
-                "moduleId": 4,
-                "terminal": "relationWire_0",
-                "uid": "879701680775"
+                "moduleId": 3,
+                "terminal": "relationWire_3",
+                "uid": "1258487267649"
             },
             "tgt": {
-                "moduleId": 7,
+                "moduleId": 6,
                 "terminal": "SOURCES",
                 "uid": "927910904234"
             }
@@ -966,7 +858,7 @@
     ],
     "storagePath": "\/var\/www\/html\/packages\/",
     "log": {
-        "last_modified": "2020-02-10 07:26",
+        "last_modified": "2020-02-12 08:18",
         "extension_builder_version": "9.10.2",
         "be_user": " (1)"
     }

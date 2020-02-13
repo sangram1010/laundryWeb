@@ -20,10 +20,10 @@ return [
         'iconfile' => 'EXT:laundry_web_app/Resources/Public/Icons/tx_laundrywebapp_domain_model_order.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, orderid, customerid, totalprice, datecreated, delivery_pid, statusid, ordetitems, customer, status, delivery_person',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, orderid, customerid, totalprice, datecreated, delivery_pid, statusid, customer, status, delivery_person, products',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, orderid, customerid, totalprice, datecreated, delivery_pid, statusid, ordetitems, customer, status, delivery_person, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, orderid, customerid, totalprice, datecreated, delivery_pid, statusid, customer, status, delivery_person, products, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -172,32 +172,6 @@ return [
                 'eval' => 'int'
             ]
         ],
-        'ordetitems' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:laundry_web_app/Resources/Private/Language/locallang_db.xlf:tx_laundrywebapp_domain_model_order.ordetitems',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectMultipleSideBySide',
-                'foreign_table' => 'tx_laundrywebapp_domain_model_orderitem',
-                'default' => 0,
-                'size' => 10,
-                'autoSizeMax' => 30,
-                'maxitems' => 9999,
-                'multiple' => 0,
-                'fieldControl' => [
-                    'editPopup' => [
-                        'disabled' => false,
-                    ],
-                    'addRecord' => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => true,
-                    ],
-                ],
-            ],
-
-        ],
         'customer' => [
             'exclude' => true,
             'label' => 'LLL:EXT:laundry_web_app/Resources/Private/Language/locallang_db.xlf:tx_laundrywebapp_domain_model_order.customer',
@@ -261,6 +235,32 @@ return [
                 'size' => 10,
                 'autoSizeMax' => 30,
                 'maxitems' => 1,
+                'multiple' => 0,
+                'fieldControl' => [
+                    'editPopup' => [
+                        'disabled' => false,
+                    ],
+                    'addRecord' => [
+                        'disabled' => false,
+                    ],
+                    'listModule' => [
+                        'disabled' => true,
+                    ],
+                ],
+            ],
+
+        ],
+        'products' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:laundry_web_app/Resources/Private/Language/locallang_db.xlf:tx_laundrywebapp_domain_model_order.products',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'tx_laundrywebapp_domain_model_product',
+                'default' => 0,
+                'size' => 10,
+                'autoSizeMax' => 30,
+                'maxitems' => 9999,
                 'multiple' => 0,
                 'fieldControl' => [
                     'editPopup' => [

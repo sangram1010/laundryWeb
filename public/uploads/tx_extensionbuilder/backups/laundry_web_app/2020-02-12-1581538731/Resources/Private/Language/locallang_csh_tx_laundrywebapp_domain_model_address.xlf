@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:laundry_web_app/Resources/Private/Language/locallang_csh" date="2019-12-22T02:57:22Z" product-name="laundry_web_app">
+		<header/>
+		<body>
+			<trans-unit id="street.description" resname="street.description">
+				<source>street</source>
+			</trans-unit>
+			<trans-unit id="addressid.description" resname="addressid.description">
+				<source>addressid</source>
+			</trans-unit>
+			<trans-unit id="houseno.description" resname="houseno.description">
+				<source>houseno</source>
+			</trans-unit>
+			<trans-unit id="pincode.description" resname="pincode.description">
+				<source>pincode</source>
+			</trans-unit>
+			<trans-unit id="state.description" resname="state.description">
+				<source>state</source>
+			</trans-unit>
+			<trans-unit id="country.description" resname="country.description">
+				<source>country</source>
+			</trans-unit>
+			<trans-unit id="contactno.description" resname="contactno.description">
+				<source>contactno</source>
+			</trans-unit>
+			<trans-unit id="email.description" resname="email.description">
+				<source>email</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

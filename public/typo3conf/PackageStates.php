@@ -107,6 +107,9 @@ return [
         'laundry_web_app' => [
             'packagePath' => 'typo3conf/ext/laundry_web_app/',
         ],
+        'session_service' => [
+            'packagePath' => 'typo3conf/ext/session_service/',
+        ],
     ],
     'version' => 5,
 ];

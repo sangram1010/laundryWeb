@@ -1,0 +1,105 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+    <div class="row">
+        <div class="col-6">
+        <h2>Product List and Price</h2>
+        </div>
+        <div class="col-6">
+            <f:form action="list" controller="Product">
+                <f:form.textfield name="search" placeholder="search" class="form-control" />
+            </f:form>
+        </div>
+        <f:if condition="{search}">
+            <div class="alert alert-info">
+                Searched for "{search}" found {products-> f:count()} results
+            </div>
+        </f:if>
+    </div>
+
+    <f:for each="{products}" as="product">
+        <div class="row">
+            <div class="col-3">
+                <f:link.action action="show" controller="Product" arguments="{product:product}">
+                <f:if condition="{product.image}">
+                    <f:then>
+                        <f:image image="{product.image.originalResource}" maxWidth="200" maxHeight="200"/>
+                    </f:then>
+                    <f:else>
+                        No images given...
+                    </f:else>
+                </f:if>
+                </f:link.action>
+            </div>
+            <div class="col-6">
+                <h3><f:link.action action="show" arguments="{product : product}" controller="Product">
+                    {product.productname}
+                </f:link.action></h3>
+                <p>
+                    Product Id: &nbsp;
+                    <f:link.action action="show" arguments="{product : product}" controller="Product">
+                        {product.productid}
+                    </f:link.action>
+                </p>
+                <p>
+                    Product Name: &nbsp;
+                    <f:link.action action="show" arguments="{product : product}">{product.productname}</f:link.action>
+                </p>
+            </div>
+            <div class="col-3">
+                <P>
+                    Price for color: &nbsp;
+                    <f:link.action action="show" arguments="{product : product}">
+                        <strong>{product.pricecolor -> f:format.currency(currencySign:'€')}</strong>
+                        <a class="btn btn-info" role="button">Add to Order</a>
+                    </f:link.action>
+                </P>
+                <P>
+                    Price for White: &nbsp;
+                    <f:link.action action="show" arguments="{product : product}">
+                        <strong>{product.pricewhite->f:format.currency(currencySign:'€')}</strong></f:link.action>
+                    <a class="btn btn-info" role="button">Add to Order</a>
+                </P>
+            </div>
+        </div>
+        <hr>
+    </f:for>
+    <f:comment>
+    <table  class="table tx_laundrywebapp" >
+        <tr>
+            <th><f:translate key="tx_laundrywebapp_domain_model_product.productname" /></th>
+            <th><f:translate key="tx_laundrywebapp_domain_model_product.productid" /></th>
+            <th><f:translate key="tx_laundrywebapp_domain_model_product.pricecolor" /></th>
+            <th><f:translate key="tx_laundrywebapp_domain_model_product.pricewhite" /></th>
+            <th> </th>
+            <th> </th>
+        </tr>
+
+        <f:for each="{products}" as="product">
+            <tr>
+                <td><f:link.action action="show" arguments="{product : product}">{product.productname}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{product : product}">{product.productid}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{product : product}">{product.pricecolor}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{product : product}">{product.pricewhite}</f:link.action></td>
+                <td><f:link.action action="edit" arguments="{product : product}">Edit</f:link.action></td>
+                <td><f:link.action action="delete" arguments="{product : product}">Delete</f:link.action></td>
+            </tr>
+        </f:for>
+    </table>
+
+    <f:link.action action="new">New Product</f:link.action>
+    </f:comment>
+</f:section>
+</html>

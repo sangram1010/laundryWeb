@@ -1,0 +1,64 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+    <h1>{product.productname}</h1>
+
+    <div class="row mb-3">
+        <div class="col-3">
+            <f:if condition="{product.image}">
+                <f:then>
+                    <f:image image="{product.image.originalResource}" width="200"/>
+                </f:then>
+                <f:else>
+                    No images given...
+                </f:else>
+            </f:if>
+        </div>
+        <div class="col-3">
+            <p>
+                Product Id: &nbsp;{product.productid}
+            </p>
+            <p>
+                Product Name: {product.productname}
+            </p>
+        </div>
+        <div class="col-6">
+            <P>
+                Price for color: &nbsp;
+                    <strong>{product.pricecolor -> f:format.currency(currencySign:'€')}</strong>
+                   &nbsp; <a class="btn btn-info" role="button">Add to Order</a>
+            </P>
+            <P>
+                Price for White: &nbsp;
+                    <strong>{product.pricewhite->f:format.currency(currencySign:'€')}</strong>
+                 &nbsp; <a class="btn btn-info" role="button">Add to Order</a>
+            </P>
+        </div>
+    </div>
+<!--    <f:render partial ="Product/Properties" arguments="{product:product}"/>-->
+    <f:switch expression="{back}">
+        <f:case value="overview">
+            <f:link.action action="overview" controller="Dashboard" pluginName="Overview" pageUid="{settings.pages.overview}">
+                Back to list
+            </f:link.action><br/>
+        </f:case>
+        <f:defaultCase>
+            <f:link.action action="list">Back to list</f:link.action><br />
+        </f:defaultCase>
+    </f:switch>
+
+<!--    <f:link.action action="new">New Product</f:link.action>-->
+</f:section>
+</html>

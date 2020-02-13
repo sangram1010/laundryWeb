@@ -12,11 +12,6 @@ call_user_func(
         );
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
             'LaunderyWebCleaners.LaundryWebApp',
-            'Laundry',
-            'Laundry'
-        );
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            'LaunderyWebCleaners.LaundryWebApp',
             'LaundryProduct',
             'LaundryProduct'
         );
@@ -35,16 +30,6 @@ call_user_func(
             'NewOrder',
             'NewOrder'
         );
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            'LaunderyWebCleaners.LaundryWebApp',
-            'CurrentOrder',
-            'CurrentOrder'
-        );
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            'LaunderyWebCleaners.LaundryWebApp',
-            'CompletedOrder',
-            'CompletedOrder'
-        );
 
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('laundry_web_app', 'Configuration/TypoScript', 'LaundryWeb App');
@@ -60,9 +45,6 @@ call_user_func(
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_laundrywebapp_domain_model_order', 'EXT:laundry_web_app/Resources/Private/Language/locallang_csh_tx_laundrywebapp_domain_model_order.xlf');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_laundrywebapp_domain_model_order');
-
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_laundrywebapp_domain_model_orderitem', 'EXT:laundry_web_app/Resources/Private/Language/locallang_csh_tx_laundrywebapp_domain_model_orderitem.xlf');
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_laundrywebapp_domain_model_orderitem');
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_laundrywebapp_domain_model_address', 'EXT:laundry_web_app/Resources/Private/Language/locallang_csh_tx_laundrywebapp_domain_model_address.xlf');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_laundrywebapp_domain_model_address');
