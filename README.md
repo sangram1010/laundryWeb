@@ -1,8 +1,12 @@
 Hello
 
 After you pull the git. please perform below steps to import the database
-DB location- /laundryWeb/db/db.sql.gz
+<hr>DB location- /laundryWeb/db/db.sql.gz
+<br>
 to export the DB use below command
-change directory to laundryWeb then
-ddev import-db --src=db/db.sql.gz
-if get error specified directory not found please chech the current location
+<hr>
+1.change directory to laundryWeb then
+<br>
+2.ddev import-db --src=db/db.sql.gz
+<hr>
+if you get any error specified directory not found please check the current location
