@@ -67,7 +67,7 @@ call_user_func(
             ],
             // non-cacheable actions
             [
-                'Product' => 'create, update, delete'
+                'Product' => 'list, show, new, create, edit, update, delete'
             ]
         );
 
