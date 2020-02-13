@@ -1,0 +1,64 @@
+base: 'http://laundryweb.ddev.site/'
+baseVariants:
+  -
+    base: 'http://laundryweb.ddev.site/'
+    condition: 'getenv("DDEV_PROJECT") == "laundryWeb"'
+errorHandling: {  }
+languages:
+  -
+    title: English
+    enabled: true
+    base: /en/
+    typo3Language: default
+    locale: en_US.UTF-8
+    iso-639-1: en
+    navigationTitle: English
+    hreflang: en-US
+    direction: ltr
+    flag: en-us-gb
+    languageId: '0'
+  -
+    title: Deutsch
+    enabled: true
+    base: /de/
+    typo3Language: de
+    locale: de_DE.UTF-8
+    iso-639-1: de
+    navigationTitle: Deutsch
+    hreflang: de-DE
+    direction: ltr
+    fallbackType: fallback
+    fallbacks: ''
+    flag: de
+    languageId: '1'
+rootPageId: 1
+routeEnhancers:
+  Product:
+    type: Extbase
+    extension: LaundryWebApp
+    plugin: LaundryProduct
+    defaultController: 'Product::list'
+    routes:
+      -
+        _controller: 'Product::list'
+        routePath: /
+      -
+        _controller: 'Product::show'
+        routePath: '/{product}'
+      -
+        _controller: 'Product::show'
+        routePath: '/{product}/{back}'
+    aspects:
+      product:
+        type: PersistedAliasMapper
+        tableName: tx_laundrywebapp_domain_model_product
+        routeFieldName: uid
+      back:
+        type: StaticValueMapper
+        map:
+          o: overview
+routes:
+  -
+    route: robots.txt
+    type: staticText
+    content: "User-agent: *\r\nDisallow: /typo3/\r\n"
