@@ -18,6 +18,8 @@ plugin.tx_laundrywebapp_laundry {
             overview =
             # cat=plugin.tx_laundrywebapp_laundry//a; type=string; label=Page ID for rendering products
             product =
+            # cat=plugin.tx_laundrywebapp_laundry//a; type=string; label=Page ID for rendering orders
+            order =
         }
         images {
             # cat=plugin.tx_laundrywebapp_laundry//a; type=string; label=Image location for recent product teaser

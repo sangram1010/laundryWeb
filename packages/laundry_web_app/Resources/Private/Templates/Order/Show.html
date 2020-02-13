@@ -15,9 +15,12 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:section name="content">
     <h1>Order Details</h1>
 
-    <f:flashMessages />
-    <f:render partial="Order/Properties" arguments="{order:order}" />
-    <f:link.action action="list">Back to list</f:link.action><br />
+    <f:if condition="customer">
+        Hello {customer.firstname}!
+    </f:if>
+<!--    <f:flashMessages />-->
+<!--    <f:render partial="Order/Properties" arguments="{order:order}" />-->
+<!--    <f:link.action action="list">Back to list</f:link.action><br />-->
 <!--    <f:link.action action="new">New Order</f:link.action>-->
 </f:section>
 </html>

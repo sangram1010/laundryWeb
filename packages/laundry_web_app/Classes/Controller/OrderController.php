@@ -2,6 +2,13 @@
 namespace LaunderyWebCleaners\LaundryWebApp\Controller;
 
 
+use LaunderyWebCleaners\LaundryWebApp\Domain\Model\Customer;
+use LaunderyWebCleaners\LaundryWebApp\Domain\Model\Order;
+use LaunderyWebCleaners\LaundryWebApp\Domain\Model\Product;
+use OliverHader\SessionService\InvalidSessionException;
+use OliverHader\SessionService\SubjectCollection;
+use OliverHader\SessionService\SubjectResolver;
+
 /***
  *
  * This file is part of the "LaundryWeb App" Extension for TYPO3 CMS.
@@ -23,7 +30,7 @@ class OrderController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
     /**
      * orderRepository
-     * 
+     *
      * @var \LaunderyWebCleaners\LaundryWebApp\Domain\Repository\OrderRepository
      */
     protected $orderRepository = null;
@@ -38,7 +45,7 @@ class OrderController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
     /**
      * action list
-     * 
+     *
      * @return void
      */
     public function listAction()
@@ -49,18 +56,70 @@ class OrderController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
     /**
      * action show
-     * 
+     *
      * @param \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Order $order
      * @return void
      */
-    public function showAction(\LaunderyWebCleaners\LaundryWebApp\Domain\Model\Order $order)
+    public function showAction()
     {
+        try{
+        $customer = SubjectResolver::get()
+            ->forClassName(Customer::class)
+            ->forPropertyName('user')
+            ->resolve();
+        } catch (InvalidSessionException $exception)
+        {
+            $customer=null;
+        }
+
+        $order =$this->providOrder();
+
+        $this->view->assign('customer',$customer);
         $this->view->assign('order', $order);
     }
 
     /**
+     * @param Product $product
+     */
+    public function addAction(Product $product)
+    {
+        $order =$this->providOrder();
+        $order->addProduct($product);
+        $this->orderRepository->update($order);
+        $this->redirect('show');
+    }
+
+    /**
+     * @param Product $product
+     */
+    public function removeAction(Product $product)
+    {
+        $order =$this->providOrder();
+        $this->redirect('show');
+    }
+
+    /**
+     *
+     */
+    public function purgeAction()
+    {
+        $order =$this->providOrder();
+        $this->redirect('show');
+    }
+
+    private function providOrder(): Order
+    {
+        $collection = SubjectCollection::get('laundry_web_app/order');
+        if (!isset($collection ['order']))
+        {
+            $collection ['order'] = $this->objectManager->get(Order::class);
+            $collection->persist();
+        }
+        return $collection ['order'];
+    }
+        /**
      * action new
-     * 
+     *
      * @return void
      */
     public function newAction()
@@ -69,7 +128,7 @@ class OrderController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
     /**
      * action create
-     * 
+     *
      * @param \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Order $newOrder
      * @return void
      */
@@ -82,7 +141,7 @@ class OrderController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
     /**
      * action edit
-     * 
+     *
      * @param \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Order $order
      * @ignorevalidation $order
      * @return void
@@ -94,7 +153,7 @@ class OrderController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
     /**
      * action update
-     * 
+     *
      * @param \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Order $order
      * @return void
      */
@@ -107,7 +166,7 @@ class OrderController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
     /**
      * action delete
-     * 
+     *
      * @param \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Order $order
      * @return void
      */
