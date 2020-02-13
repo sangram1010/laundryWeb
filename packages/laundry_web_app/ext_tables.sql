@@ -99,6 +99,7 @@ CREATE TABLE tx_laundrywebapp_domain_model_status (
 CREATE TABLE tx_laundrywebapp_domain_model_product (
 
 	productname varchar(255) DEFAULT '' NOT NULL,
+	slug varchar(2048),
 	productid int(11) DEFAULT '0' NOT NULL,
 	itemid int(11) DEFAULT '0' NOT NULL,
 	pricecolor double(11,2) DEFAULT '0.00' NOT NULL,
