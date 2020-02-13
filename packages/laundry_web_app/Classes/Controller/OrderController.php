@@ -95,6 +95,8 @@ class OrderController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     public function removeAction(Product $product)
     {
         $order =$this->providOrder();
+        $order->removeProduct($product);
+        $this->orderRepository->update($order);
         $this->redirect('show');
     }
 
