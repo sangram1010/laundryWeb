@@ -30,6 +30,11 @@ call_user_func(
             'NewOrder',
             'NewOrder'
         );
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'LaunderyWebCleaners.LaundryWebApp',
+            'Admin',
+            'Admin'
+        );
 
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('laundry_web_app', 'Configuration/TypoScript', 'LaundryWeb App');

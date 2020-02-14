@@ -57,12 +57,12 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <!--    <f:render partial ="Product/Properties" arguments="{product:product}"/>-->
     <f:switch expression="{back}">
         <f:case value="overview">
-            <f:link.action action="overview" controller="Dashboard" pluginName="Overview" pageUid="{settings.pages.overview}">
+            <f:link.action action="overview" controller="Dashboard" pluginName="Overview" pageUid="{settings.pages.overview}" arguments="{product:product}" class="btn btn-warning">
                 Back to list
             </f:link.action><br/>
         </f:case>
         <f:defaultCase>
-            <f:link.action action="list">Back to list</f:link.action><br />
+            <f:link.action action="list" arguments="{product:product}" class="btn btn-warning">Back to list</f:link.action><br />
         </f:defaultCase>
     </f:switch>
 

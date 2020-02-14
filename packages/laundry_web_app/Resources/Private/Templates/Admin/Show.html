@@ -1,0 +1,67 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+    <h1>New Orders</h1>
+
+    <f:if condition="customer">
+    </f:if>
+    <hr>
+    <f:for each="{order.products}" as="product">
+        <div class="row">
+            <div class="col-3">
+                <f:link.action action="show" controller="Product" arguments="{product:product}">
+                    <f:if condition="{product.image}">
+                        <f:then>
+                            <f:image image="{product.image.originalResource}" maxWidth="200" maxHeight="200"/>
+                        </f:then>
+                        <f:else>
+                            No images given...
+                        </f:else>
+                    </f:if>
+                </f:link.action>
+            </div>
+            <div class="col-6">
+                <h3><f:link.action action="show" arguments="{product : product}" controller="Product">
+                    {product.productname}
+                </f:link.action></h3>
+                <p>
+                    Product Id: &nbsp;
+                    <f:link.action action="show" arguments="{product : product}" controller="Product">
+                        {product.productid}
+                    </f:link.action>
+                </p>
+                <p>
+                    Product Name: &nbsp;
+                    <f:link.action action="show" arguments="{product : product}">{product.productname}</f:link.action>
+                </p>
+            </div>
+            <div class="col-3">
+                <P>
+                    <f:link.action action="accept" controller="Admin" pluginName="admin" arguments="{product:order}"
+                                       pageUid="{settings.pages.admin}" class="btn btn-warning">
+                             Accept the Order
+                        </f:link.action>
+                </P>
+            </div>
+        </div>
+        <hr>
+    </f:for>
+
+<!--    <f:flashMessages />-->
+<!--    <f:render partial="Order/Properties" arguments="{order:order}" />-->
+<!--    <f:link.action action="list">Back to list</f:link.action><br />-->
+<!--    <f:link.action action="new">New Order</f:link.action>-->
+</f:section>
+</html>

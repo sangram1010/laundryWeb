@@ -87,6 +87,7 @@ class OrderController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $order->addProduct($product);
         $this->orderRepository->update($order);
         $this->redirect('show');
+        return $product;
     }
 
     /**
@@ -109,7 +110,7 @@ class OrderController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->redirect('show');
     }
 
-    private function providOrder(): Order
+    public function providOrder(): Order
     {
         $collection = SubjectCollection::get('laundry_web_app/order');
         if (!isset($collection ['order']))

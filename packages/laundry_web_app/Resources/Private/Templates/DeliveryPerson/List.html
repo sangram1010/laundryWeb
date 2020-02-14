@@ -13,8 +13,55 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="content">
-    <h1>Delivery Persons</h1>
 
+    <div class="row">
+        <div class="col-6">
+            <h1>Delivery Persons</h1>
+        </div>
+        <div class="col-3">
+            <f:form action="list" controller="DerliveryPerson">
+                <f:form.textfield name="search" placeholder="search" class="form-control" />
+            </f:form>
+        </div>
+        <f:if condition="{search}">
+            <div class="alert alert-info">
+                Searched for "{search}" found {customers-> f:count()} results
+            </div>
+        </f:if>
+    </div>
+    <hr>
+    <f:for each="{deliveryPersons}" as="deliveryPerson">
+        <div class="row">
+            <div class="col-3">
+                <p>
+                    Delivery Person ID:&nbsp;<strong>{deliveryPerson.deliveryPid}</strong>
+                </p>
+            </div>
+            <div class="col-6">
+                <p>
+                    Delivery Person Name:
+                    <f:link.action action="show" controller="DeliveryPerson" arguments="{deliveryPerson:deliveryPerson}">
+                        <strong>&nbsp;{deliveryPerson.name} </strong>
+                    </f:link.action>
+                </p>
+                <p>
+                    Delivery Person Contact Nr: &nbsp;
+                    <strong> {deliveryPerson.contactno}</strong>
+                </p>
+            </div>
+            <div class="col-3">
+                <P>
+                    <f:link.action action="edit" arguments="{deliveryPerson : deliveryPerson}" class="btn btn-info">Edit Customer</f:link.action>
+                </P>
+                <P>
+                    <f:link.action action="delete" arguments="{deliveryPerson : deliveryPerson}" class="btn btn-danger">Delete</f:link.action>
+                </P>
+            </div>
+        </div>
+        <hr>
+    </f:for>
+
+    <f:comment>
     <f:flashMessages />
 
     <table  class="table tx_laundrywebapp" >
@@ -36,7 +83,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
             </tr>
         </f:for>
     </table>
-
-    <f:link.action action="new">Add New DeliveryPerson</f:link.action>
+    </f:comment>
+    <f:link.action action="new" arguments="{deliveryPerson : deliveryPerson}" class="btn btn-warning">Add New DeliveryPerson</f:link.action>
 </f:section>
 </html>

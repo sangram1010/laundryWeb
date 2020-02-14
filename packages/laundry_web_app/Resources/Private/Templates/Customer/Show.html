@@ -14,11 +14,31 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <f:section name="content">
     <h1>Customer Details</h1>
+    <hr>
+    <h5><strong>&nbsp;{customer.title} &nbsp;{customer.firstname} &nbsp;{customer.surname} </strong></h5>
+    <hr>
+        <div class="row">
+            <div class="col-3">
+                <p>
+                    Customer Id:&nbsp; <strong>{customer.customerid} </strong>
+                </p>
+            </div>
+            <div class="col-6">
+                <p>
+                    Address Id: &nbsp;
+                    <strong>    {customer.addressid} </strong>
+                </p>
+            </div>
+        </div>
 
+        <hr>
+    <f:comment>
     <f:flashMessages />
     <f:render partial="Customer/Properties" arguments="{customer:customer}" />
 <!--    <f:render partial="Address/Properties" arguments="{address:address}" />-->
-    <f:link.action action="list">Back to list</f:link.action><br />
-    <f:link.action action="new">New Customer</f:link.action>
+    </f:comment>
+    <f:link.action action="list" arguments="{customer : customer}" controller="Customer" class="btn btn-warning">Back to list</f:link.action><br />
+        <hr>
+    <f:link.action action="new" arguments="{customer : customer}" controller="Customer" class="btn btn-warning">New Customer</f:link.action>
 </f:section>
 </html>

@@ -27,6 +27,7 @@ plugin.tx_laundrywebapp {
             overview = {$plugin.tx_laundrywebapp_laundry.settings.pages.overview}
             product = {$plugin.tx_laundrywebapp_laundry.settings.pages.product}
             order = {$plugin.tx_laundrywebapp_laundry.settings.pages.order}
+            admin = {$plugin.tx_laundrywebapp_laundry.settings.pages.admin}
         }
         images {
             product = {$plugin.tx_laundrywebapp_laundry.settings.images.product}

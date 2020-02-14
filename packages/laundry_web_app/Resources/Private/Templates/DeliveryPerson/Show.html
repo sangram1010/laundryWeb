@@ -14,10 +14,30 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <f:section name="content">
     <h1>DeliveryPerson Details</h1>
+    <hr>
+    <h5><strong>&nbsp;{deliveryPerson.name} </strong></h5>
+    <hr>
+    <div class="row">
+        <div class="col-3">
+            <p>
+                Delivery Person Id:&nbsp; <strong>{deliveryPerson.deliveryPid} </strong>
+            </p>
+        </div>
+        <div class="col-6">
+            <p>
+                Delivery Person Contact Nr: &nbsp;
+                <strong> {deliveryPerson.contactno}</strong>
+            </p>
+        </div>
+    </div>
 
+    <hr>
+    <f:comment>
     <f:flashMessages />
     <f:render partial="DeliveryPerson/Properties" arguments="{deliveryPerson:deliveryPerson}" />
-    <f:link.action action="list">Back to list</f:link.action><br />
-    <f:link.action action="new">New DeliveryPerson</f:link.action>
+    </f:comment>
+    <f:link.action action="list" arguments="{deliveryPerson : deliveryPerson}" class="btn btn-warning">Back to list</f:link.action><br />
+    <br>
+    <f:link.action action="new" arguments="{deliveryPerson : deliveryPerson}" class="btn btn-warning">New DeliveryPerson</f:link.action>
 </f:section>
 </html>

@@ -82,6 +82,17 @@ call_user_func(
                 'Order' => 'show, add, remove, purge',            ]
         );
 
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'LaunderyWebCleaners.LaundryWebApp',
+            'Admin',
+            [
+                'Admin' => 'show, accept, complete',
+            ],
+            // non-cacheable actions
+            [
+                'Admin' => 'show, accept, complete', ]
+        );
+
         // wizards
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
             'mod {
@@ -130,6 +141,16 @@ call_user_func(
                          NewOrder {
                             iconIdentifier = laundry_web_app-plugin-laundry
                             title = NewOrder
+                            description = LLL:EXT:laundry_web_app/Resources/Private/Language/locallang_db.xlf:tx_laundry_web_app_laundry.description
+                            tt_content_defValues {
+                                CType = list
+                                list_type = laundrywebapp_laundry
+                            }
+                            
+                        }
+                        Admin {
+                            iconIdentifier = laundry_web_app-plugin-laundry
+                            title = Admin
                             description = LLL:EXT:laundry_web_app/Resources/Private/Language/locallang_db.xlf:tx_laundry_web_app_laundry.description
                             tt_content_defValues {
                                 CType = list
