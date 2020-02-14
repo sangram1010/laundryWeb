@@ -28,7 +28,7 @@ languages:
     hreflang: de-DE
     direction: ltr
     fallbackType: fallback
-    fallbacks: ''
+    fallbacks: '0'
     flag: de
     languageId: '1'
 rootPageId: 1
@@ -63,8 +63,12 @@ routeEnhancers:
     plugin: Overview
     defaultController: 'Dashboard::overview'
     routes:
-      - {_controller: 'Dashboard::overview', routePath: '/'}
-      - {_controller: 'Dashboard::overview', routePath: '/{dashboard}/{action}'}
+      -
+        _controller: 'Dashboard::overview'
+        routePath: /
+      -
+        _controller: 'Dashboard::overview'
+        routePath: '/{dashboard}/{action}'
     aspects:
       dashboard:
         type: PersistedAliasMapper
@@ -80,21 +84,27 @@ routeEnhancers:
     plugin: NewOrder
     defaultController: 'Order::show'
     routes:
-      - {_controller: 'Order::show', routePath: '/'}
-      - {_controller: 'Order::add', routePath: '/add/{product}'}
-      - {_controller: 'Order::remove', routePath: '/remove/{product}'}
-      - {_controller: 'Order::purge', routePath: '/purge'}
+      -
+        _controller: 'Order::show'
+        routePath: /
+      -
+        _controller: 'Order::add'
+        routePath: '/add/{product}'
+      -
+        _controller: 'Order::remove'
+        routePath: '/remove/{product}'
+      -
+        _controller: 'Order::purge'
+        routePath: /purge
     aspects:
       product:
         type: PersistedAliasMapper
-        tableName: 'tx_laundrywebapp_domain_model_product'
+        tableName: tx_laundrywebapp_domain_model_product
         routeFieldName: slug
       back:
         type: StaticValueMapper
         map:
-          o: 'overview'
-
-
+          o: overview
 routes:
   -
     route: robots.txt

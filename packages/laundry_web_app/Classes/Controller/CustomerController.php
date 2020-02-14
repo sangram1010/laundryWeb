@@ -2,6 +2,8 @@
 namespace LaunderyWebCleaners\LaundryWebApp\Controller;
 
 
+use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
+
 /***
  *
  * This file is part of the "LaundryWeb App" Extension for TYPO3 CMS.
@@ -23,7 +25,7 @@ class CustomerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
     /**
      * customerRepository
-     * 
+     *
      * @var \LaunderyWebCleaners\LaundryWebApp\Domain\Repository\CustomerRepository
      */
     protected $customerRepository = null;
@@ -37,19 +39,24 @@ class CustomerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     }
 
     /**
-     * action list
-     * 
-     * @return void
+     * @param string $search
+     * @throws InvalidQueryException
      */
-    public function listAction()
+    public function listAction(string $search=null)
     {
-        $customers = $this->customerRepository->findAll();
+        if($search === null){
+            $customers = $this->customerRepository->findAll();
+        }else{
+            $customers = $this->customerRepository->findBySearch($search);
+        }
+        $this->view->assign('search', $search);
         $this->view->assign('customers', $customers);
+
     }
 
     /**
      * action show
-     * 
+     *
      * @param \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Customer $customer
      * @return void
      */
@@ -60,7 +67,7 @@ class CustomerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
     /**
      * action new
-     * 
+     *
      * @return void
      */
     public function newAction()
@@ -69,7 +76,7 @@ class CustomerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
     /**
      * action create
-     * 
+     *
      * @param \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Customer $newCustomer
      * @return void
      */
@@ -82,7 +89,7 @@ class CustomerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
     /**
      * action edit
-     * 
+     *
      * @param \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Customer $customer
      * @ignorevalidation $customer
      * @return void
@@ -94,7 +101,7 @@ class CustomerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
     /**
      * action update
-     * 
+     *
      * @param \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Customer $customer
      * @return void
      */
@@ -107,7 +114,7 @@ class CustomerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
     /**
      * action delete
-     * 
+     *
      * @param \LaunderyWebCleaners\LaundryWebApp\Domain\Model\Customer $customer
      * @return void
      */

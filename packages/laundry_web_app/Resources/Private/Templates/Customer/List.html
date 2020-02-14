@@ -13,8 +13,57 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="content">
-    <h1>Customers</h1>
+    <div class="row">
+        <div class="col-6">
+            <h2>Customers</h2>
+        </div>
+        <div class="col-3">
+            <f:form action="list" controller="Customer">
+                <f:form.textfield name="search" placeholder="search" class="form-control" />
+            </f:form>
+        </div>
+        <f:if condition="{search}">
+            <div class="alert alert-info">
+                Searched for "{search}" found {customers-> f:count()} results
+            </div>
+        </f:if>
+    </div>
+<hr>
+    <f:for each="{customers}" as="customer">
+        <div class="row">
+            <div class="col-3">
+                <p>
+                Customer Id:&nbsp;<strong>{customer.customerid}</strong>
+                </p>
+                <p>
+                User Id:&nbsp;<strong>{customer.user.username}</strong>
+                </p>
+            </div>
+            <div class="col-6">
+                <p>
+                    Customer Name:
+                    <f:link.action action="show" controller="Customer" arguments="{customer:customer}">
+                        <strong>&nbsp;{customer.title} &nbsp;{customer.firstname} &nbsp;{customer.surname} </strong>
+                </f:link.action>
+                </p>
+                <p>
+                    Address Id: &nbsp;
+                    <strong>    {customer.addressid}</strong>
+                </p>
+            </div>
+            <div class="col-3">
+                <P>
+                <f:link.action action="edit" arguments="{customer : customer}" controller="Customer" class="btn btn-info">Edit Customer</f:link.action>
+                </P>
+                <P>
+                    <f:link.action action="delete" arguments="{customer : customer}"controller="Customer" class="btn btn-danger">Delete</f:link.action>
+                </P>
+            </div>
+        </div>
+        <hr>
+    </f:for>
 
+<f:comment>
     <f:flashMessages />
 
     <table  class="table tx_laundrywebapp" >
@@ -36,13 +85,12 @@ Otherwise your changes will be overwritten the next time you save the extension 
                 <td><f:link.action action="show" arguments="{customer : customer}">{customer.surname}</f:link.action></td>
                 <td><f:link.action action="show" arguments="{customer : customer}">{customer.firstname}</f:link.action></td>
                 <td><f:link.action action="show" arguments="{customer : customer}">{customer.addressid}</f:link.action></td>
-<!--                <td><f:link.action action="show" arguments="{customer : address}">{address.addressid}</f:link.action></td>-->
                 <td><f:link.action action="edit" arguments="{customer : customer}">Edit</f:link.action></td>
                 <td><f:link.action action="delete" arguments="{customer : customer}">Delete</f:link.action></td>
             </tr>
         </f:for>
     </table>
-
-    <f:link.action action="new">Add New Customers</f:link.action>
+</f:comment>
+    <f:link.action action="new" arguments="{customer : customer}" controller="Customer" class="btn btn-warning">Add New Customers</f:link.action>
 </f:section>
 </html>
